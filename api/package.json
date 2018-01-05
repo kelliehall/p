@@ -1,0 +1,18 @@
+{
+  "name": "plants",
+  "version": "1.0.0",
+  "description": "albys helper",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm test",
+    "lint": "eslint api/"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "eslint": "^4.14.0"
+  }
+}
