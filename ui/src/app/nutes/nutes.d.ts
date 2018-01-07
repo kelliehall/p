@@ -1,4 +1,4 @@
-export interface Nutes {
+export interface Nute {
     name: string,
     added: string,
     need: boolean,

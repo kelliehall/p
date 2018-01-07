@@ -29,6 +29,10 @@ class Nutes {
 
         return Nute.findOne(mongoQuery).then(data => data);
     }
+
+    getAll() {
+        return Nute.find().then(data => data);
+    }
 }
 
 module.exports = Nutes;

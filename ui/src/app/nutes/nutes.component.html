@@ -1,20 +1,13 @@
-<p>moment works {{time}}</p>
-
-<div class="btn-group">
-    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Action
-    </button>
-    <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">checking jquery</a>
+<div id="nute-container" class="col-xl-12">
+    <div class="card text-center" *ngFor="let nute of nutes" id="nute-list">
+        <div class="card-block">
+            <h4 class="card-title">{{nute.name}}</h4>
+            <p class="card-text">active : {{nute.active}}</p>
+            <p class="card-text">need : {{nute.need}}</p>
+            <p class="card-text">added : {{nute.added}}</p>
+        </div>
+    </div>
+    <div class="col-xl-12 text-center" id="action-bar">
+        <button class="btn btn-primary">Add</button>
     </div>
 </div>
-
-<form class="example-form">
-    <mat-form-field class="example-full-width">
-        <input matInput placeholder="Material works?" value="Sushi">
-    </mat-form-field>
-
-    <mat-form-field class="example-full-width">
-        <textarea matInput placeholder="Leave a comment"></textarea>
-    </mat-form-field>
-</form>
