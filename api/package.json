@@ -1,7 +1,7 @@
 {
-  "name": "plants",
+  "name": "p",
   "version": "1.0.0",
-  "description": "albys helper",
+  "description": "xd",
   "main": "app.js",
   "scripts": {
     "test": "npm test",
@@ -10,9 +10,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.2"
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongoose": "^5.0.0-rc2"
   },
   "devDependencies": {
     "eslint": "^4.14.0"
+  },
+  "engines": {
+    "node": ">=8.9.4"
   }
 }
