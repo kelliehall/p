@@ -1,5 +1,8 @@
-var mongoose = require('mongoose');
-var Nute = require('./nute.model');
+'use strict';
+
+const mongoose = require('mongoose');
+const Nute = require('./nute.model');
+const moment = require('moment');
 
 class Nutes {
     constructor({ req }) {
@@ -7,7 +10,11 @@ class Nutes {
     }
 
     create() {
-        let nute = new Nute(this.body);
+        let nuteObj = Object.assign({}, this.body, {
+            active: true,
+            added: moment()
+        })
+        let nute = new Nute(nuteObj);
         return Nute.create(nute).then(data => Nute.findById(data._id));
     }
 

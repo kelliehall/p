@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatInputModule, MatDialogModule } from '@angular/material';
+import { MatInputModule, MatDialogModule, MatSlideToggleModule, MatButtonModule } from '@angular/material';
 
-import { NutesComponent, NuteDialog } from './nutes.component';
+import { NutesComponent } from './nutes.component';
 import { NutesService } from './nutes.service';
 import { NuteRoutesModule } from './nutes.routes.module';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { NuteDialog } from './modal';
 
 @NgModule({
     entryComponents: [
@@ -18,7 +20,11 @@ import { NuteRoutesModule } from './nutes.routes.module';
         CommonModule,
         NuteRoutesModule,
         MatInputModule,
-        MatDialogModule
+        MatDialogModule,
+        MatSlideToggleModule,
+        ReactiveFormsModule,
+        FormsModule,
+        MatButtonModule
     ],
     exports: [NutesComponent],
     providers: [NutesService],

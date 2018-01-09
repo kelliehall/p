@@ -17,7 +17,7 @@ import { ApiInterceptor } from './api.interceptor';
     NutesModule,
     AppRoutesModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

@@ -21,7 +21,7 @@ app.use(function (req, res, next) {
     next();
 });
 
-if (config.db) {
+if (config && config.db) {
     mongoose.connect(`mongodb://${config.db.username}:${config.db.password}@${config.db.host}:${config.db.port}/?authSource=admin`);
 } else {
     mongoose.connect('mongodb://localhost/p');
@@ -35,9 +35,7 @@ app.get('/nute/:id', (req, res) => {
     new Nutes({ req }).getById().then(result => res.json(result));
 }).post('/nute', (req, res) => {
     new Nutes({ req }).create().then(result => res.json(result));
-});
-
-app.get('/nutes', (req, res) => {
+}).get('/nute', (req, res) => {
     new Nutes({ req }).getAll().then(result => res.json(result));
 });
 

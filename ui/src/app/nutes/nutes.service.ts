@@ -11,4 +11,8 @@ export class NutesService {
     getNutes(): Observable<any> {
         return this.http.get<Nute[]>(Config.api + Config.endpoints.nutes);
     }
+
+    createNute(nute): Observable<any> {
+        return this.http.post<Nute>(Config.api + Config.endpoints.nutes, nute);
+    }
 }

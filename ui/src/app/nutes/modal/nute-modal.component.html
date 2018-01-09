@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Add Nute</h1>
+<div mat-dialog-content id="nute-modal">
+    <form [formGroup]="nuteForm">
+        <mat-form-field class="row">
+            <input matInput placeholder="Nutrient Name" formControlName="name">
+        </mat-form-field>
+        <mat-slide-toggle [color]="'primary'" formControlName="need" class="row">
+            Need
+        </mat-slide-toggle>
+        <mat-form-field class="row">
+            <input matInput placeholder="Tracking #" formControlName="tracking">
+        </mat-form-field>
+        <mat-form-field class="row">
+            <input matInput placeholder="Image URL" formControlName="image">
+        </mat-form-field>
+    </form>
+</div>
+<button mat-raised-button color="primary" (click)="save()" [disabled]="this.nuteForm.invalid">Add</button>
