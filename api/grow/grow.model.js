@@ -5,11 +5,11 @@ var Schema = mongoose.Schema;
 
 var GrowSchema = new Schema({
     name: { type: String, required: true },
-    flowers: [mongoose.Types.ObjectId],
-    cycle: mongoose.Types.ObjectId,
+    flowers: [String],
+    cycle: String,
     start: { type: String, required: true },
     end: String,
-    nutrients: [mongoose.Types.ObjectId],
+    nutrients: [String],
     notes: [{
         date: String,
         observation: String

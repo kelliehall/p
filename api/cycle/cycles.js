@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Cycle = require('./cycle.model');
 
-class Cycle {
+class Cycles {
     constructor({ req }) {
         Object.assign(this, req);
     }
@@ -30,4 +30,4 @@ class Cycle {
     }
 }
 
-module.exports = Cycle;
+module.exports = Cycles;

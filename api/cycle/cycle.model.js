@@ -9,12 +9,12 @@ var CycleSchema = new Schema({
     weeks: {
         week: { type: Number, required: true },
         nutrients: [{
-            nutrient: mongoose.Types.ObjectId,
+            nutrient: String,
             amount: String
         }]
     },
-    grows: [mongoose.Types.ObjectId],
-    flowers: [mongoose.Types.ObjectId],
+    grows: [String],
+    flowers: [String],
     notes: [{
         date: String,
         observation: String
