@@ -1,14 +1,14 @@
 var mongoose = require('mongoose');
-var Nute = require('./nute.model');
+var Cycle = require('./cycle.model');
 
-class Nutes {
+class Cycle {
     constructor({ req }) {
         Object.assign(this, req);
     }
 
     create() {
-        let nute = new Nute(this.body);
-        return Nute.create(nute).then(data => Nute.findById(data._id));
+        let cycle = new Cycle(this.body);
+        return Cycle.create(cycle).then(data => Cycle.findById(data._id));
     }
 
     getById() {
@@ -22,12 +22,12 @@ class Nutes {
         const objId = new mongoose.Types.ObjectId(id);
         const mongoQuery = { _id: objId };
 
-        return Nute.findOne(mongoQuery).then(data => data);
+        return Cycle.findOne(mongoQuery).then(data => data);
     }
 
     getAll() {
-        return Nute.find().then(data => data);
+        return Cycle.find().then(data => data);
     }
 }
 
-module.exports = Nutes;
+module.exports = Cycle;

@@ -5,7 +5,7 @@ import { NutesComponent } from './nutes.component';
 
 const routes = [
     { path: 'nutes', component: NutesComponent }
-]
+];
 
 @NgModule({
     imports: [RouterModule.forChild(routes)],

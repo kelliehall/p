@@ -16,7 +16,8 @@ var NuteSchema = new Schema({
         link: { type: String, trim: true }
     },
     tracking: { type: String, trim: true },
-    added: { type: String, required: true }
+    added: { type: String, required: true },
+    image: String
 });
 
 const Nute = mongoose.model('nute', NuteSchema);
