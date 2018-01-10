@@ -1,15 +1,16 @@
 #nute-container {
+  margin-top: 10px;
   .card {
-    float: left;
+    display: flex;
+    justify-content: space-evenly;
     width: 30%;
   }
-  #nute-list {
-    margin-bottom: 30px;
-  }
-  #action-bar {
+  .lead {
     display: flex;
     justify-content: space-around;
-    padding-top: 20px;
+  }
+  .fa-times {
+    cursor: pointer;
   }
 }
 #nute-modal {

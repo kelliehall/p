@@ -1,13 +1,16 @@
-<div id="nute-container" class="col-xl-12">
-    <div class="card text-center" *ngFor="let nute of nutes" id="nute-list">
+<div class="jumbotron" id="nute-container">
+    <h1 class="display-4">
+        <i class="fa fa-flask" aria-hidden="true"></i>
+        Nutrients</h1>
+    <hr class="my-4">
+    <div class="card text-center" *ngFor="let nute of nutes">
         <div class="card-block">
             <h4 class="card-title">{{nute.name}}</h4>
-            <p class="card-text">active : {{nute.active}}</p>
             <p class="card-text">need : {{nute.need}}</p>
-            <p class="card-text">added : {{nute.added | year}}</p>
+            <i class="fa fa-times" aria-hidden="true" (click)="delete(nute)"></i>
         </div>
     </div>
-    <div class="col-xl-12 text-center" id="action-bar">
+    <p class="lead">
         <button class="btn btn-primary" (click)="addNute()">Add</button>
-    </div>
+    </p>
 </div>

@@ -35,6 +35,19 @@ class Nutes {
     getAll() {
         return Nute.find().then(data => data);
     }
+
+    deleteNute() {
+        let { params } = this;
+        let { id } = params;
+        if (!mongoose.Types.ObjectId.isValid(id)) {
+            return Promise.reject(
+                new Error('Bad Request', -14, 'GetByIdException', `<${id}> isn't a valid ObjectId`)
+            )
+        }
+        const objId = new mongoose.Types.ObjectId(id);
+
+        return Nute.findByIdAndRemove(objId).then(data => data);
+    }
 }
 
 module.exports = Nutes;

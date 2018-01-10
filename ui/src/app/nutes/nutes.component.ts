@@ -24,9 +24,15 @@ export class NutesComponent {
     }
 
     addNute() {
-        let modal = this.nuteDialog.open(NuteDialog);
+        const modal = this.nuteDialog.open(NuteDialog);
         modal.afterClosed().subscribe(res => {
             this.getNutes();
-        })
+        });
+    }
+
+    delete(nute: Nute) {
+        this.nuteService.deleteNute(nute).subscribe(() => {
+            this.getNutes();
+        });
     }
 }

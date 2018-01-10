@@ -15,4 +15,8 @@ export class NutesService {
     createNute(nute): Observable<any> {
         return this.http.post<Nute>(Config.api + Config.endpoints.nutes, nute);
     }
+
+    deleteNute(nute): Observable<any> {
+        return this.http.delete<Nute>(Config.api + Config.endpoints.nutes + `/${nute._id}`);
+    }
 }
