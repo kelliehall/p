@@ -1,9 +1,11 @@
 #nute-container {
-  margin-top: 10px;
+  margin-top: 1vh;
+  height: calc(98vh);
   .card {
     display: flex;
     justify-content: space-evenly;
     width: 30%;
+    float: left;
   }
   .lead {
     display: flex;
@@ -11,6 +13,11 @@
   }
   .fa-times {
     cursor: pointer;
+  }
+  #nute-add{
+    position: absolute;
+    bottom: 1vh;
+    right: 3vh;
   }
 }
 #nute-modal {
