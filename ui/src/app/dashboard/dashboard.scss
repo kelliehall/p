@@ -1,0 +1,13 @@
+#dashboard {
+    .jumbotron {
+        width: calc(92vw/4);
+        margin-top: 10px;
+        border: 1px solid #333;
+        float: left;
+        padding: 1em 0 !important;
+        margin: 3px;
+    }
+    .display-4 {
+        text-align: center;
+    }
+}

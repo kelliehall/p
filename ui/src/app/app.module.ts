@@ -7,10 +7,12 @@ import { AppComponent } from './app.component';
 import { NutesModule } from './nutes/nutes.module';
 import { AppRoutesModule } from './app.routes.module';
 import { ApiInterceptor } from './api.interceptor';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

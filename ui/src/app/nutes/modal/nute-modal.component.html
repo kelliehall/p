@@ -2,7 +2,7 @@
 <div mat-dialog-content id="nute-modal">
     <form [formGroup]="nuteForm">
         <mat-form-field class="row">
-            <input matInput placeholder="Nutrient Name" formControlName="name">
+            <input matInput placeholder="Nutrient Name" formControlName="name" autocomplete="off" data-lpignore="true">
         </mat-form-field>
         <mat-slide-toggle [color]="'primary'" formControlName="need" class="row">
             Need
