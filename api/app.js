@@ -9,7 +9,8 @@ const bodyParser = require('body-parser');
 
 const Nutes = require('./nutes/nutes');
 const Cycles = require('./cycle/cycles');
-var Grows = require('./grow/grows');
+const Grows = require('./grow/grows');
+const Flowers = require('./flower/flowers');
 
 app.set('port', port);
 app.listen(port);
@@ -47,10 +48,10 @@ app.get('/cycle/:id', (req, res) => {
     new Cycles({ req }).getById().then(result => res.json(result));
 }).post('/cycle', (req, res) => {
     new Cycles({ req }).create().then(result => res.json(result));
-});
-
-app.get('/cycles', (req, res) => {
+}).get('/cycle', (req, res) => {
     new Cycles({ req }).getAll().then(result => res.json(result));
+}).delete('/cycle/:id', (req, res) => {
+    new Cycles({ req }).deleteCycle().then(result => res.json(result));
 });
 
 //Grows
@@ -58,9 +59,20 @@ app.get('/grow/:id', (req, res) => {
     new Grows({ req }).getById().then(result => res.json(result));
 }).post('/grow', (req, res) => {
     new Grows({ req }).create().then(result => res.json(result));
+}).get('/grow', (req, res) => {
+    new Grows({ req }).getAll().then(result => res.json(result));
+}).delete('/grow/:id', (req, res) => {
+    new Grows({ req }).deleteGrow().then(result => res.json(result));
 });
 
-app.get('/grows', (req, res) => {
-    new Grows({ req }).getAll().then(result => res.json(result));
+//Flowers
+app.get('/flower/:id', (req, res) => {
+    new Flower({ req }).getById().then(result => res.json(result));
+}).post('/flower', (req, res) => {
+    new Flowers({ req }).create().then(result => res.json(result));
+}).get('/flower', (req, res) => {
+    new Flowers({ req }).getAll().then(result => res.json(result));
+}).delete('/flower/:id', (req, res) => {
+    new Flowers({ req }).deleteFlower().then(result => res.json(result));
 });
 

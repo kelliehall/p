@@ -1,14 +1,19 @@
-var mongoose = require('mongoose');
-var Grow = require('./grow.model');
+'use strict';
 
-class Grows {
+const mongoose = require('mongoose');
+const Flower = require('./flower.model');
+
+class Flowers {
     constructor({ req }) {
         Object.assign(this, req);
     }
 
     create() {
-        let grow = new Grow(this.body);
-        return Grow.create(grow).then(data => Grow.findById(data._id));
+        let flowerObj = Object.assign({}, this.body, {
+            active: true
+        });
+        let flower = new Flower(flowerObj);
+        return Flower.create(flower).then(data => Flower.findById(data._id))
     }
 
     getById() {
@@ -22,14 +27,14 @@ class Grows {
         const objId = new mongoose.Types.ObjectId(id);
         const mongoQuery = { _id: objId };
 
-        return Grow.findOne(mongoQuery).then(data => data);
+        return Flower.findOne(mongoQuery).then(data => data);
     }
 
     getAll() {
-        return Grow.find().then(data => data);
+        return Flower.find().then(data => data);
     }
 
-    deleteGrow() {
+    deleteFlower() {
         let { params } = this;
         let { id } = params;
         if (!mongoose.Types.ObjectId.isValid(id)) {
@@ -38,9 +43,8 @@ class Grows {
             )
         }
         const objId = new mongoose.Types.ObjectId(id);
-        return Grow.findByIdAndRemove(objId).then(data => data);
+        return Flower.findByIdAndRemove(objId).then(data => data);
     }
-
 }
 
-module.exports = Grows;
+module.exports = Flowers;

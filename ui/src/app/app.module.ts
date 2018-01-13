@@ -8,6 +8,7 @@ import { NutesModule } from './nutes/nutes.module';
 import { AppRoutesModule } from './app.routes.module';
 import { ApiInterceptor } from './api.interceptor';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { FlowerModule } from './flowers/flowers.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   imports: [
     BrowserModule,
     NutesModule,
+    FlowerModule,
     AppRoutesModule,
     BrowserAnimationsModule,
     HttpClientModule,

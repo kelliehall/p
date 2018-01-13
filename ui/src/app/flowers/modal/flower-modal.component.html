@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>Add Flower</h1>
+<div mat-dialog-content id="flower-modal">
+    <form [formGroup]="flowerForm">
+        <mat-form-field class="row">
+            <input matInput placeholder="Flower Identifier" formControlName="identifier" autocomplete="off" data-lpignore="true">
+        </mat-form-field>
+        <mat-form-field class="row">
+            <input matInput placeholder="Strain" formControlName="strain">
+        </mat-form-field>
+    </form>
+</div>
+<button mat-raised-button color="primary" (click)="save()" [disabled]="this.flowerForm.invalid">Add</button>
