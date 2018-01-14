@@ -1,0 +1,31 @@
+#grow-container {
+    margin-top: 1vh;
+    height: calc(98vh);
+    .card {
+      display: flex;
+      justify-content: space-evenly;
+      width: 30%;
+      float: left;
+    }
+    .lead {
+      display: flex;
+      justify-content: space-around;
+    }
+    .fa-times {
+      cursor: pointer;
+    }
+    #grow-add{
+      position: absolute;
+      bottom: 1vh;
+      right: 3vh;
+    }
+  }
+  #grow-modal {
+    .row {
+      width: 100%;
+    }
+    form {
+      padding: 1em;
+    }
+  }
+  

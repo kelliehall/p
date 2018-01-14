@@ -1,6 +1,7 @@
 #dashboard {
     .jumbotron {
         width: calc(92vw/4);
+        min-width: 216px;
         margin-top: 10px;
         border: 1px solid #333;
         float: left;

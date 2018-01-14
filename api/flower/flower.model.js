@@ -13,7 +13,15 @@ var FlowerSchema = new Schema({
     children: [{ type: String }],
     clone: Boolean,
     cloneStart: String,
-    strain: String
+    strain: String,
+    murdered: String,
+    yield: String,
+    notes: [{
+        week: String,
+        note: String,
+        grow: String,
+        date: String
+    }]
 });
 
 const Flower = mongoose.model('flower', FlowerSchema);

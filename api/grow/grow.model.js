@@ -14,7 +14,8 @@ var GrowSchema = new Schema({
         date: String,
         observation: String
     }],
-    status: { type: String, required: true, enum: ['veg', 'flower'] }
+    //veg or flower
+    status: { type: String }
 });
 
 const Grow = mongoose.model('grow', GrowSchema);

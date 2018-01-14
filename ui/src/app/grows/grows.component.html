@@ -1,0 +1,14 @@
+<div class="jumbotron" id="grow-container">
+    <h1 class="display-4">
+        <i class="fa fa-leaf" aria-hidden="true"></i>
+        Grows</h1>
+    <hr class="my-4">
+    <div class="card text-center" *ngFor="let grow of grows">
+        <div class="card-block">
+            <h4 class="card-title">{{grow.name}}</h4>
+            <p class="card-text">start : {{grow.start}}</p>
+            <i class="fa fa-times" aria-hidden="true" (click)="delete(nute)"></i>
+        </div>
+    </div>
+    <button class="btn btn-primary" (click)="addGrow()" id="grow-add">Add</button>
+</div>
