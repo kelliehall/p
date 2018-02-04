@@ -1,3 +1,23 @@
 <section class="container-fluid">
+    <ul class="nav justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['']">Dashboard</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['flowers']" routerLinkActive="active">Flowers</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['nutes']" routerLinkActive="active">Nutrients</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['grows']" routerLinkActive="active">Grows</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['strains']" routerLinkActive="active">Strains</a>
+        </li>
+        <!-- <li class="nav-item">
+            <a class="nav-link" [routerLink]="cycles"></a>
+        </li> -->
+    </ul>
     <router-outlet></router-outlet>
 </section>
