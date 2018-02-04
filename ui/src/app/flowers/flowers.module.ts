@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FlowerRoutesModule } from './flowers.routes.module';
 import { FlowersComponent } from './flowers.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { MatInputModule, MatDialogModule, MatSlideToggleModule, MatButtonModule } from '@angular/material';
+import { MatInputModule, MatDialogModule, MatSlideToggleModule, MatButtonModule, MatDatepickerModule } from '@angular/material';
 import { FlowerService } from './flowers.service';
 import { FlowerDialog } from './modal/index';
 
@@ -23,7 +23,8 @@ import { FlowerDialog } from './modal/index';
         MatInputModule,
         MatDialogModule,
         MatSlideToggleModule,
-        MatButtonModule
+        MatButtonModule,
+        MatDatepickerModule
     ],
     exports: [FlowersComponent],
     providers: [FlowerService],

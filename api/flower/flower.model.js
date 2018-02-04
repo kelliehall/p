@@ -4,18 +4,21 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var FlowerSchema = new Schema({
-    identifier: { type: String },
-    planted: { type: String },
-    mother: Boolean,
-    genetics: { type: String },
-    grow: { type: String },
     active: Boolean,
+    strain: String,
+    planted: { type: String },
+    end: { type: String },
+    yield: String,
+    grow: { type: String },
+
+    genetics: { type: String },
+    breeder: { type: String },
+
+    mother: Boolean,
     children: [{ type: String }],
     clone: Boolean,
     cloneStart: String,
-    strain: String,
-    murdered: String,
-    yield: String,
+
     notes: [{
         week: String,
         note: String,

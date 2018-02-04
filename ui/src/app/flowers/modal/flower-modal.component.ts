@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
+import { FormBuilder, Validators, FormGroup, FormControl, FormArray } from '@angular/forms';
 import { FlowerService } from '../flowers.service';
+import * as moment from 'moment';
 
 @Component({
     templateUrl: './flower-modal.component.html',
@@ -16,8 +17,20 @@ export class FlowerDialog implements OnInit {
 
     ngOnInit() {
         this.flowerForm = this.fb.group({
-            identifier: new FormControl('', Validators.required),
-            strain: new FormControl('', Validators.required)
+            strain: new FormControl('', Validators.required),
+
+            planted: new FormControl(moment(), Validators.required),
+            end: new FormControl(''),
+            yield: new FormControl(''),
+
+            grow: new FormControl(),
+
+            mother: new FormControl(false),
+            children: new FormControl(),
+            clone: new FormControl(false),
+            cloneStart: new FormControl(),
+
+            notes: new FormArray([]),
         });
     }
 

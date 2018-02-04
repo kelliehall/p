@@ -1,12 +1,47 @@
 <h1 mat-dialog-title>Add Flower</h1>
 <div mat-dialog-content id="flower-modal">
     <form [formGroup]="flowerForm">
-        <mat-form-field class="row">
-            <input matInput placeholder="Flower Identifier" formControlName="identifier" autocomplete="off" data-lpignore="true">
-        </mat-form-field>
+        <!-- todo replace with option to select from a strain -->
         <mat-form-field class="row">
             <input matInput placeholder="Strain" formControlName="strain">
         </mat-form-field>
+
+        <mat-form-field class="row">
+            <input matInput [matDatepicker]="picker" placeholder="Planted" formControlName="planted">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-slide-toggle [color]="'primary'" formControlName="end" class="row">
+            Ended
+        </mat-slide-toggle>
+        <mat-form-field class="row" *ngIf="flowerForm.get('end').value">
+            <input matInput [matDatepicker]="picker" placeholder="Harvested" formControlName="end">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field class="row" *ngIf="flowerForm.get('end').value">
+            <input matInput placeholder="Yield" formControlName="yield">
+        </mat-form-field>
+
+        <mat-slide-toggle [color]="'primary'" formControlName="mother" class="row">
+            Mother
+        </mat-slide-toggle>
+        <!-- todo replace with multiselect of clones -->
+        <mat-form-field class="row" *ngIf="flowerForm.get('mother').value">
+            <input matInput placeholder="Children" formControlName="children">
+        </mat-form-field>
+
+        <mat-slide-toggle [color]="'primary'" formControlName="clone" class="row">
+            Clone
+        </mat-slide-toggle>
+        <mat-form-field class="row" *ngIf="flowerForm.get('clone').value">
+            <input matInput [matDatepicker]="picker" placeholder="Cloned" formControlName="cloneStart">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <!-- todo add notes -->
     </form>
 </div>
 <button mat-raised-button color="primary" (click)="save()" [disabled]="this.flowerForm.invalid">Add</button>

@@ -5,7 +5,7 @@
             <input matInput placeholder="Grow Name" formControlName="name" autocomplete="off" data-lpignore="true">
         </mat-form-field>
         <mat-form-field class="row">
-            <input matInput [matDatepicker]="picker" placeholder="Start Date" [formControl]="start">
+            <input matInput [matDatepicker]="picker" placeholder="Start Date" formControlName="start">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>

@@ -11,6 +11,7 @@ const Nutes = require('./nutes/nutes');
 const Cycles = require('./cycle/cycles');
 const Grows = require('./grow/grows');
 const Flowers = require('./flower/flowers');
+const Strains = require('./strains/strains');
 
 app.set('port', port);
 app.listen(port);
@@ -67,7 +68,7 @@ app.get('/grow/:id', (req, res) => {
 
 //Flowers
 app.get('/flower/:id', (req, res) => {
-    new Flower({ req }).getById().then(result => res.json(result));
+    new Flowers({ req }).getById().then(result => res.json(result));
 }).post('/flower', (req, res) => {
     new Flowers({ req }).create().then(result => res.json(result));
 }).get('/flower', (req, res) => {
@@ -76,3 +77,14 @@ app.get('/flower/:id', (req, res) => {
     new Flowers({ req }).deleteFlower().then(result => res.json(result));
 });
 
+
+//Strains
+app.get('/strain/:id', (req, res) => {
+    new Strains({ req }).getById().then(result => res.json(result));
+}).post('/strain', (req, res) => {
+    new Strains({ req }).create().then(result => res.json(result));
+}).get('/strain', (req, res) => {
+    new Strains({ req }).getAll().then(result => res.json(result));
+}).delete('/strain/:id', (req, res) => {
+    new Strains({ req }).deleteStrain().then(result => res.json(result));
+});

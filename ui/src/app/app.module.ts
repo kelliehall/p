@@ -11,6 +11,7 @@ import { ApiInterceptor } from './api.interceptor';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FlowerModule } from './flowers/flowers.module';
 import { GrowsModule } from './grows/grows.module';
+import { StrainsModule } from './strains/strains.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { GrowsModule } from './grows/grows.module';
     NutesModule,
     FlowerModule,
     GrowsModule,
+    StrainsModule,
     AppRoutesModule,
     BrowserAnimationsModule,
     HttpClientModule,
