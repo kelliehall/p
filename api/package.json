@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "npm test",
-    "lint": "eslint api/"
+    "lint": "eslint api/",
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
@@ -13,10 +14,10 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "moment": "2.20.1",
-    "mongoose": "^5.0.0-rc2"
+    "mongoose": "^5.0.3"
   },
   "devDependencies": {
-    "eslint": "^4.14.0"
+    "eslint": "^4.17.0"
   },
   "engines": {
     "node": ">=8.9.4"

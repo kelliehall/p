@@ -8,11 +8,14 @@ import { FlowerDialog } from './modal/index';
     templateUrl: './flowers.component.html',
     styleUrls: ['./flowers.scss']
 })
-export class FlowersComponent {
+export class FlowersComponent implements OnInit {
     flowers: Flower[];
 
     constructor(private flowerService: FlowerService,
         public flowerDialog: MatDialog) {
+    }
+
+    ngOnInit() {
         this.getFlowers();
     }
 
