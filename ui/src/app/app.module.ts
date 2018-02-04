@@ -15,7 +15,7 @@ import { GrowsModule } from './grows/grows.module';
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +25,7 @@ import { GrowsModule } from './grows/grows.module';
     AppRoutesModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatMomentDateModule
+    MatMomentDateModule,
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

@@ -6,10 +6,14 @@ import { GrowsRoutesModule } from './grows.routes.module';
 import { MatInputModule, MatDialogModule, MatSlideToggleModule, MatButtonModule, MatDatepickerModule } from '@angular/material';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { GrowsService } from './grows.service';
+import { PipeModule } from '../common/pipe.module';
 
 @NgModule({
     entryComponents: [GrowDialog],
-    declarations: [GrowsComponent, GrowDialog],
+    declarations: [
+        GrowsComponent,
+        GrowDialog,
+    ],
     imports: [
         CommonModule,
         GrowsRoutesModule,
@@ -20,6 +24,7 @@ import { GrowsService } from './grows.service';
         FormsModule,
         MatButtonModule,
         MatDatepickerModule,
+        PipeModule
     ],
     exports: [GrowsComponent],
     providers: [GrowsService],

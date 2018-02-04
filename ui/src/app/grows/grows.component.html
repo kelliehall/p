@@ -6,8 +6,8 @@
     <div class="card text-center" *ngFor="let grow of grows">
         <div class="card-block">
             <h4 class="card-title">{{grow.name}}</h4>
-            <p class="card-text">start : {{grow.start}}</p>
-            <i class="fa fa-times" aria-hidden="true" (click)="delete(nute)"></i>
+            <p class="card-text">start : {{grow.start | year}}</p>
+            <i class="fa fa-times" aria-hidden="true" (click)="delete(grow)"></i>
         </div>
     </div>
     <button class="btn btn-primary" (click)="addGrow()" id="grow-add">Add</button>

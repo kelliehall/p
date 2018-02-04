@@ -7,7 +7,6 @@ import { NutesService } from './nutes.service';
 import { NuteRoutesModule } from './nutes.routes.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NuteDialog } from './modal';
-import { YearPipe } from '../common/pipes';
 
 @NgModule({
     entryComponents: [
@@ -16,7 +15,6 @@ import { YearPipe } from '../common/pipes';
     declarations: [
         NutesComponent,
         NuteDialog,
-        YearPipe
     ],
     imports: [
         CommonModule,
