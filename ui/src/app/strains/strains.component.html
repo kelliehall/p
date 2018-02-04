@@ -1,0 +1,13 @@
+<div class="jumbotron" id="strain-container">
+    <h1 class="display-4">
+        <i class="fa fa-tree" aria-hidden="true"></i>
+        Strains</h1>
+    <hr class="my-4">
+    <div class="card text-center" *ngFor="let strain of strains">
+        <div class="card-block">
+            <h4 class="card-title">{{strain.name}}</h4>
+            <i class="fa fa-times" aria-hidden="true" (click)="delete(strain)"></i>
+        </div>
+    </div>
+    <button class="btn btn-primary" (click)="addStrain()" id="strain-add">Add</button>
+</div>

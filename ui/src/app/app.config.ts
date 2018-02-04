@@ -3,6 +3,7 @@ export const Config = {
     endpoints: {
         nutes: '/nute',
         flowers: '/flower',
-        grows: '/grow'
+        grows: '/grow',
+        strains: '/strain'
     }
 }
