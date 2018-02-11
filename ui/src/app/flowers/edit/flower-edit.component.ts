@@ -4,6 +4,11 @@ import { switchMap } from 'rxjs/operators';
 import { Flower } from '../flowers';
 import { FlowerService } from '../flowers.service';
 import { ActivatedRoute, Params } from '@angular/router';
+import { GrowsService } from '../../grows/grows.service';
+import { StrainsService } from '../../strains/strains.service';
+import { NutesService } from '../../nutes/nutes.service';
+import { Grow } from '../../grows/grow';
+import { Strain } from '../../strains/strains';
 
 @Component({
     templateUrl: './flower-edit.component.html',
@@ -11,17 +16,43 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class FlowerEditComponent implements OnInit {
     flower$: Observable<Flower>;
+    strains: Strain[] = [];
+    grows: Grow[] = [];
 
     constructor(private route: ActivatedRoute,
-        private flowerService: FlowerService) {
+        private growsService: GrowsService,
+        private strainsService: StrainsService,
+        private nutesSertice: NutesService,
+        private flowersService: FlowerService) {
     }
 
     ngOnInit() {
         this.route.params.pipe(
             switchMap((params: Params) => {
-                return this.flowerService.getById(params['id'])
+                return this.flowersService.getById(params['id'])
             }))
             .subscribe(flower => this.flower$ = flower);
+
+        this.getStrains();
+        this.getGrows();
+    }
+
+    getStrains() {
+        this.strainsService.getStrains().subscribe(data => this.strains = data);
+    }
+
+    getGrows() {
+        this.growsService.getGrows().subscribe(data => this.grows = data);
+    }
+
+    findStrain(id) {
+        const strain = this.strains.find(strain => strain._id == id);
+        return strain ? strain.name : '';
+    }
+
+    findGrow(id) {
+        const grow = this.grows.find(grow => grow._id == id);
+        return grow ? grow.name : '';
     }
 
 }

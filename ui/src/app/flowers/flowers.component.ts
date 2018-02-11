@@ -17,9 +17,9 @@ export class FlowersComponent implements OnInit {
     strains: Strain[] = [];
     grows: Grow[] = [];
 
-    constructor(private flowerService: FlowerService,
-        private strainService: StrainsService,
-        private growService: GrowsService,
+    constructor(private flowersService: FlowerService,
+        private strainsService: StrainsService,
+        private growsService: GrowsService,
         public flowerDialog: MatDialog) {
     }
 
@@ -30,26 +30,26 @@ export class FlowersComponent implements OnInit {
     }
 
     getFlowers() {
-        this.flowerService.getFlowers().subscribe(data => this.flowers = data);
+        this.flowersService.getFlowers().subscribe(data => this.flowers = data);
     }
 
     getStrains() {
-        this.strainService.getStrains().subscribe(data => this.strains = data);
+        this.strainsService.getStrains().subscribe(data => this.strains = data);
     }
 
     getGrows() {
-        this.growService.getGrows().subscribe(data => this.grows = data);
+        this.growsService.getGrows().subscribe(data => this.grows = data);
     }
 
     addFlower() {
         const modal = this.flowerDialog.open(FlowerDialog, { data: { strains: this.strains, grows: this.grows } });
         modal.afterClosed().subscribe(res => {
-            this.flowerService.updateFlowers();
+            this.flowersService.updateFlowers();
         });
     }
 
     delete(flower: Flower) {
-        this.flowerService.deleteFlower(flower).subscribe(() => {
+        this.flowersService.deleteFlower(flower).subscribe(() => {
             this.getFlowers();
         });
     }

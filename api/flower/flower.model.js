@@ -20,11 +20,26 @@ var FlowerSchema = new Schema({
     clone: Boolean,
     cloneStart: String,
 
-    notes: [{
-        week: String,
-        note: String,
-        grow: String,
-        date: String
+    history: [{
+        note: { type: String },
+        date: String,
+        nutrients: [{
+            name: String,
+            amount: String,
+            suggested: String
+        }],
+        transplanted: Boolean,
+        defeciencys: String,
+        flushed: Boolean,
+        ph: {
+            in: Number,
+            out: Number,
+        },
+        ppm: {
+            in: Number,
+            out: Number
+        },
+        height: Number
     }]
 });
 

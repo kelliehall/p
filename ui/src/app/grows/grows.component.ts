@@ -14,8 +14,8 @@ export class GrowsComponent implements OnInit {
     grows: Grow[];
     flowers: Flower[];
 
-    constructor(private growService: GrowsService,
-        public flowerService: FlowerService,
+    constructor(private growsService: GrowsService,
+        public flowersService: FlowerService,
         public growDialog: MatDialog) {
     }
 
@@ -25,28 +25,28 @@ export class GrowsComponent implements OnInit {
     }
 
     getGrows() {
-        this.growService.getGrows().subscribe(data => {
+        this.growsService.getGrows().subscribe(data => {
             this.grows = data
         });
     }
 
     getFlowers() {
-        this.flowerService.getFlowers().subscribe(data => this.flowers = data);
+        this.flowersService.getFlowers().subscribe(data => this.flowers = data);
     }
 
     addGrow() {
         const modal = this.growDialog.open(GrowDialog, {
             data: {
-                flowerService: FlowerService
+                flowersService: FlowerService
             }
         });
         modal.afterClosed().subscribe(res => {
-            this.growService.updateGrows();
+            this.growsService.updateGrows();
         });
     }
 
     delete(grow: Grow) {
-        this.growService.deleteGrow(grow).subscribe(() => {
+        this.growsService.deleteGrow(grow).subscribe(() => {
             this.getGrows();
         });
     }

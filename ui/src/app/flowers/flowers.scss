@@ -1,31 +1,52 @@
+$fogra: #040404;
+$timber: #d7d9ce;
+$seaweed: #0c7489;
+$bgreen: #119da4;
+$mgreen: #13505B;
+
 #flower-container {
-    margin-top: 1vh;
-    height: calc(91vh);
-    .card {
-      display: flex;
-      justify-content: space-evenly;
-      width: 30%;
-      float: left;
-    }
-    .lead {
-      display: flex;
-      justify-content: space-around;
-    }
-    .fa-times {
-      cursor: pointer;
-    }
-    #flower-add{
-      position: absolute;
-      bottom: 1vh;
-      right: 3vh;
-    }
+  margin-top: 1vh;
+  height: calc(91vh);
+  .card {
+    display: flex;
+    justify-content: space-evenly;
+    width: 30%;
+    float: left;
   }
-  #flower-modal {
-    .row {
-      width: 100%;
-    }
-    form {
-      padding: 1em;
-    }
+  .lead {
+    display: flex;
+    justify-content: space-around;
   }
-  
+  .fa-times {
+    cursor: pointer;
+  }
+  #flower-add{
+    position: absolute;
+    bottom: 1vh;
+    right: 3vh;
+  }
+}
+
+#flower-modal {
+  .row {
+    width: 100%;
+  }
+  form {
+    padding: 1em;
+  }
+}
+
+#flower-details {
+  height: calc(95vh);
+  .details{
+    background: $timber;
+    padding: 1em;
+    text-align: center;
+  }
+  #notes-add {
+    position: absolute;
+    bottom: 1vh;
+    right: 3vh;
+  }
+
+}

@@ -16,7 +16,7 @@ export class FlowerDialog implements OnInit {
     grows: Grow[];
 
     constructor(private fb: FormBuilder,
-        private flowerService: FlowerService,
+        private flowersService: FlowerService,
         @Inject(MAT_DIALOG_DATA) public data: { strains: Strain[], grows: Grow[] },
         public flowerDialog: MatDialog) {
         this.strains = data.strains;
@@ -44,7 +44,7 @@ export class FlowerDialog implements OnInit {
     }
 
     save() {
-        this.flowerService.createFlower(this.flowerForm.getRawValue()).subscribe(data => {
+        this.flowersService.createFlower(this.flowerForm.getRawValue()).subscribe(data => {
             this.flowerDialog.closeAll();
         });
     }

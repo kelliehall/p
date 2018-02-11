@@ -12,7 +12,7 @@ export class GrowDialog implements OnInit {
     growForm: FormGroup;
 
     constructor(private fb: FormBuilder,
-        private growService: GrowsService,
+        private growsService: GrowsService,
         public growDialog: MatDialog) { }
 
     ngOnInit() {
@@ -29,6 +29,6 @@ export class GrowDialog implements OnInit {
     }
 
     save() {
-        this.growService.createGrow(this.growForm.getRawValue()).subscribe(data => this.growDialog.closeAll());
+        this.growsService.createGrow(this.growForm.getRawValue()).subscribe(data => this.growDialog.closeAll());
     }
 }
