@@ -6,6 +6,7 @@ var Schema = mongoose.Schema;
 var FlowerSchema = new Schema({
     active: Boolean,
     strain: String,
+    identifier: String,
     planted: { type: String },
     end: { type: String },
     yield: String,

@@ -3,7 +3,8 @@ export interface Strain {
     breeder: string,
     genetics?: string,
     source?: string,
-    notes?: Notes[]
+    notes?: Notes[],
+    _id: string
 }
 
 interface Notes {

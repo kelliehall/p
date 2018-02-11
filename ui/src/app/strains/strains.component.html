@@ -6,6 +6,9 @@
     <div class="card text-center" *ngFor="let strain of strains">
         <div class="card-block">
             <h4 class="card-title">{{strain.name}}</h4>
+            <p class="card-text">breeder : {{strain.breeder}}</p>
+            <p class="card-text">genetics : {{strain.genetics}}</p>
+            <p class="card-text">source : {{strain.source}}</p>
             <i class="fa fa-times" aria-hidden="true" (click)="delete(strain)"></i>
         </div>
     </div>

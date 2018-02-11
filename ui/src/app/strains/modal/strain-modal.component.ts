@@ -23,4 +23,8 @@ export class StrainDialog implements OnInit {
             notes: new FormArray([])
         });
     }
+
+    save() {
+        this.strainsService.createStrain(this.strainForm.getRawValue()).subscribe(data => this.strainDialog.closeAll());
+    }
 }

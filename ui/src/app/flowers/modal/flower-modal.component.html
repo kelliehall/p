@@ -1,9 +1,16 @@
 <h1 mat-dialog-title>Add Flower</h1>
 <div mat-dialog-content id="flower-modal">
     <form [formGroup]="flowerForm">
-        <!-- todo replace with option to select from a strain -->
         <mat-form-field class="row">
-            <input matInput placeholder="Strain" formControlName="strain">
+            <mat-select placeholder="Strain" formControlName="strain" required>
+                <mat-option *ngFor="let strain of strains" [value]="strain._id">
+                    {{strain.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="row">
+            <input matInput placeholder="Identifier" formControlName="identifier">
         </mat-form-field>
 
         <mat-form-field class="row">

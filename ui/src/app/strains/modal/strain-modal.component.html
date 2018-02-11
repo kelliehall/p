@@ -1,1 +1,18 @@
 <h1 mat-dialog-title>Add Strain</h1>
+<div mat-dialog-content id="strain-modal">
+    <form [formGroup]="strainForm">
+        <mat-form-field class="row">
+            <input matInput placeholder="Strain Name" formControlName="name" autocomplete="off" data-lpignore="true">
+        </mat-form-field>
+        <mat-form-field class="row">
+            <input matInput placeholder="Breeder" formControlName="breeder" autocomplete="off" data-lpignore="true">
+        </mat-form-field>
+        <mat-form-field class="row">
+            <input matInput placeholder="Genetics" formControlName="genetics" autocomplete="off" data-lpignore="true">
+        </mat-form-field>
+        <mat-form-field class="row">
+            <input matInput placeholder="Source" formControlName="source" autocomplete="off" data-lpignore="true">
+        </mat-form-field>
+    </form>
+</div>
+<button mat-raised-button color="primary" (click)="save()" [disabled]="this.strainForm.invalid">Add</button>
