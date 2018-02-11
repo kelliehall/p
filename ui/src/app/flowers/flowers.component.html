@@ -6,7 +6,9 @@
     <div class="card text-center" *ngFor="let flower of flowers">
         <div class="card-block">
             <h4 class="card-title">{{flower.identifier}}</h4>
+            <p class="card-text">grow : {{findGrow(flower.grow)}}</p>
             <p class="card-text">strain : {{findStrain(flower.strain)}}</p>
+            <p class="card-text">planted : {{flower.planted | year}}</p>
             <i class="fa fa-times" aria-hidden="true" (click)="delete(flower)"></i>
         </div>
     </div>

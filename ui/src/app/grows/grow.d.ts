@@ -1,4 +1,5 @@
 export interface Grow {
+    _id: string,
     name: string,
     flowers?: Array<string>,
     cycle?: string,

@@ -6,6 +6,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatInputModule, MatDialogModule, MatSlideToggleModule, MatButtonModule, MatDatepickerModule, MatOptionModule, MatSelectModule } from '@angular/material';
 import { FlowerService } from './flowers.service';
 import { FlowerDialog } from './modal/index';
+import { PipeModule } from '../common/pipe.module';
 
 @NgModule({
     entryComponents: [
@@ -26,7 +27,8 @@ import { FlowerDialog } from './modal/index';
         MatButtonModule,
         MatDatepickerModule,
         MatOptionModule,
-        MatSelectModule
+        MatSelectModule,
+        PipeModule
     ],
     exports: [FlowersComponent],
     providers: [FlowerService],

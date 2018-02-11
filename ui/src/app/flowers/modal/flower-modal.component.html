@@ -10,6 +10,14 @@
         </mat-form-field>
 
         <mat-form-field class="row">
+            <mat-select placeholder="Grow" formControlName="grow" required>
+                <mat-option *ngFor="let grow of grows" [value]="grow._id">
+                    {{grow.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="row">
             <input matInput placeholder="Identifier" formControlName="identifier">
         </mat-form-field>
 
