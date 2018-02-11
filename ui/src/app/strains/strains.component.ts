@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Strain } from './strains';
 import { StrainsService } from './strains.service';
-import { StrainDialog } from './modal/index';
+import { StrainDialog } from './modal';
 import { MatDialog } from '@angular/material';
 
 @Component({

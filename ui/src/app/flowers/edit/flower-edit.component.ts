@@ -9,6 +9,8 @@ import { StrainsService } from '../../strains/strains.service';
 import { NutesService } from '../../nutes/nutes.service';
 import { Grow } from '../../grows/grow';
 import { Strain } from '../../strains/strains';
+import { MatDialog } from '@angular/material';
+import { NotesDialog } from './notes';
 
 @Component({
     templateUrl: './flower-edit.component.html',
@@ -23,6 +25,7 @@ export class FlowerEditComponent implements OnInit {
         private growsService: GrowsService,
         private strainsService: StrainsService,
         private nutesSertice: NutesService,
+        public notesDialog: MatDialog,
         private flowersService: FlowerService) {
     }
 
@@ -53,6 +56,14 @@ export class FlowerEditComponent implements OnInit {
     findGrow(id) {
         const grow = this.grows.find(grow => grow._id == id);
         return grow ? grow.name : '';
+    }
+
+    addNote() {
+        const modal = this.notesDialog.open(NotesDialog);
+        modal.afterClosed().subscribe(res => {
+            console.log('todo');
+        })
+
     }
 
 }

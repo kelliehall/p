@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Grow } from './grow';
 import { GrowsService } from './grows.service';
 import { MatDialog } from '@angular/material';
-import { GrowDialog } from './modal/index';
+import { GrowDialog } from './modal';
 import { FlowerService } from '../flowers/flowers.service';
 import { Flower } from '../flowers/flowers';
 

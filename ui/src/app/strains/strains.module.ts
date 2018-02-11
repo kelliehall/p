@@ -4,7 +4,7 @@ import { StrainsComponent } from './strains.component';
 import { StrainsService } from './strains.service';
 import { StrainRoutesModule } from './strains.routes.module';
 import { MatDialogModule, MatInputModule, MatButtonModule } from '@angular/material';
-import { StrainDialog } from './modal/index';
+import { StrainDialog } from './modal';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
