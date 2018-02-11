@@ -7,6 +7,7 @@ import { MatInputModule, MatDialogModule, MatSlideToggleModule, MatButtonModule,
 import { FlowerService } from './flowers.service';
 import { FlowerDialog } from './modal/index';
 import { PipeModule } from '../common/pipe.module';
+import { FlowerEditComponent } from './edit/flower-edit.component';
 
 @NgModule({
     entryComponents: [
@@ -14,7 +15,8 @@ import { PipeModule } from '../common/pipe.module';
     ],
     declarations: [
         FlowersComponent,
-        FlowerDialog
+        FlowerDialog,
+        FlowerEditComponent
     ],
     imports: [
         CommonModule,

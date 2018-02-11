@@ -44,7 +44,7 @@ export class FlowersComponent implements OnInit {
     addFlower() {
         const modal = this.flowerDialog.open(FlowerDialog, { data: { strains: this.strains, grows: this.grows } });
         modal.afterClosed().subscribe(res => {
-            this.getFlowers();
+            this.flowerService.updateFlowers();
         });
     }
 

@@ -35,7 +35,7 @@ export class NutesComponent implements OnInit {
 
     delete(nute: Nute) {
         this.nuteService.deleteNute(nute).subscribe(() => {
-            this.getNutes();
+            this.nuteService.updateNutes();
         });
     }
 }

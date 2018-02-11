@@ -25,7 +25,7 @@ export class StrainsComponent implements OnInit {
     addStrain() {
         const modal = this.strainDialog.open(StrainDialog);
         modal.afterClosed().subscribe(res => {
-            this.getStrains();
+            this.strainsService.updateStrains();
         });
     }
 

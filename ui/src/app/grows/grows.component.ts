@@ -25,7 +25,9 @@ export class GrowsComponent implements OnInit {
     }
 
     getGrows() {
-        this.growService.getGrows().subscribe(data => this.grows = data);
+        this.growService.getGrows().subscribe(data => {
+            this.grows = data
+        });
     }
 
     getFlowers() {
@@ -39,7 +41,7 @@ export class GrowsComponent implements OnInit {
             }
         });
         modal.afterClosed().subscribe(res => {
-            this.getGrows();
+            this.growService.updateGrows();
         });
     }
 
