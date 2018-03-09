@@ -36,4 +36,8 @@ export class FlowerService {
             this.flowers$.next(data)
         );
     }
+
+    updatebyId(id, body): Observable<any> {
+        return this.http.put<any>(Config.api + Config.endpoints.flowers + `/${id}`, body);
+    }
 }

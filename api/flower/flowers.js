@@ -45,6 +45,18 @@ class Flowers {
         const objId = new mongoose.Types.ObjectId(id);
         return Flower.findByIdAndRemove(objId).then(data => data);
     }
+
+    update() {
+        let { params, body } = this;
+        let { id } = params;
+        if (!mongoose.Types.ObjectId.isValid(id)) {
+            return Promise.reject(
+                new Error('Bad Request', -14, 'GetByIdException', `<${id}> isn't a valid ObjectId`)
+            )
+        }
+        const objId = new mongoose.Types.ObjectId(id);
+        return Flower.findByIdAndUpdate(objId, body).then(data => Flower.findById(data._id));
+    }
 }
 
 module.exports = Flowers;

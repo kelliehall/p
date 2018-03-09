@@ -58,6 +58,10 @@ export class FlowerEditComponent implements OnInit {
         return grow ? grow.name : '';
     }
 
+    endFlower() {
+        console.log(this.flower$);
+    }
+
     addNote() {
         const modal = this.notesDialog.open(NotesDialog);
         modal.afterClosed().subscribe(res => {

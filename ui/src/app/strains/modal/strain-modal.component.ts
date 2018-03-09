@@ -25,6 +25,9 @@ export class StrainDialog implements OnInit {
     }
 
     save() {
-        this.strainsService.createStrain(this.strainForm.getRawValue()).subscribe(data => this.strainDialog.closeAll());
+        this.strainsService.createStrain(this.strainForm.getRawValue()).subscribe(data => {
+            this.strainsService.updateStrains();
+            this.strainDialog.closeAll()
+        });
     }
 }

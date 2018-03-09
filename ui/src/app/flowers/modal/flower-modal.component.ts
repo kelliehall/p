@@ -45,6 +45,7 @@ export class FlowerDialog implements OnInit {
 
     save() {
         this.flowersService.createFlower(this.flowerForm.getRawValue()).subscribe(data => {
+            this.flowersService.updateFlowers();
             this.flowerDialog.closeAll();
         });
     }

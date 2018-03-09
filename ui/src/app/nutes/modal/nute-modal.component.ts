@@ -28,6 +28,7 @@ export class NuteDialog implements OnInit {
 
     save() {
         this.nuteService.createNute(this.nuteForm.getRawValue()).subscribe(data => {
+            this.nuteService.updateNutes();
             this.nuteDialog.closeAll();
         });
     }

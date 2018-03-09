@@ -29,6 +29,9 @@ export class GrowDialog implements OnInit {
     }
 
     save() {
-        this.growsService.createGrow(this.growForm.getRawValue()).subscribe(data => this.growDialog.closeAll());
+        this.growsService.createGrow(this.growForm.getRawValue()).subscribe((data) => {
+            this.growsService.updateGrows();
+            this.growDialog.closeAll()
+        });
     }
 }

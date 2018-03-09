@@ -25,7 +25,7 @@ app.use(function (req, res, next) {
 });
 
 if (config && config.db) {
-    mongoose.connect(`mongodb://${config.db.username}:${config.db.password}@${config.db.host}:${config.db.port}/?authSource=admin`);
+    mongoose.connect(`mongodb://${config.db.username}:${config.db.password}@${config.db.host}:${config.db.port}/p`);
 } else {
     mongoose.connect('mongodb://localhost/p');
 }
@@ -75,6 +75,8 @@ app.get('/flower/:id', (req, res) => {
     new Flowers({ req }).getAll().then(result => res.json(result));
 }).delete('/flower/:id', (req, res) => {
     new Flowers({ req }).deleteFlower().then(result => res.json(result));
+}).put('/flower/:id', (req, res) => {
+    new Flowers({ req }).update().then(result => res.json(result));
 });
 
 
