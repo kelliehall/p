@@ -11,6 +11,7 @@ import { Grow } from '../../grows/grow';
 import { Strain } from '../../strains/strains';
 import { MatDialog } from '@angular/material';
 import { NotesDialog } from './notes';
+import { Nute } from '../../nutes/nutes';
 
 @Component({
     templateUrl: './flower-edit.component.html',
@@ -20,11 +21,12 @@ export class FlowerEditComponent implements OnInit {
     flower$: Observable<Flower>;
     strains: Strain[] = [];
     grows: Grow[] = [];
+    nutes: Nute[] = [];
 
     constructor(private route: ActivatedRoute,
         private growsService: GrowsService,
         private strainsService: StrainsService,
-        private nutesSertice: NutesService,
+        private nutesService: NutesService,
         public notesDialog: MatDialog,
         private flowersService: FlowerService) {
     }
@@ -38,6 +40,7 @@ export class FlowerEditComponent implements OnInit {
 
         this.getStrains();
         this.getGrows();
+        this.getNutes();
     }
 
     getStrains() {
@@ -46,6 +49,10 @@ export class FlowerEditComponent implements OnInit {
 
     getGrows() {
         this.growsService.getGrows().subscribe(data => this.grows = data);
+    }
+
+    getNutes() {
+        this.nutesService.getNutes().subscribe(data => this.nutes = data);
     }
 
     findStrain(id) {
@@ -63,7 +70,7 @@ export class FlowerEditComponent implements OnInit {
     }
 
     addNote() {
-        const modal = this.notesDialog.open(NotesDialog);
+        const modal = this.notesDialog.open(NotesDialog, { data: { flower: this.flower$, nutes: this.nutes } });
         modal.afterClosed().subscribe(res => {
             console.log('todo');
         })
