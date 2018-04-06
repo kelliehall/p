@@ -5,6 +5,30 @@
         </h1>
         <span>{{findGrow(flower$.grow)}} - {{findStrain(flower$.strain)}}</span>
     </div>
+    <div class="history">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col" *ngFor="let header of tableHeaders">{{header}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let history of flower$.history">
+                    <th scope="row">{{history.date || '' | history}}</th>
+                    <th scope="row">{{history.note || ''}}</th>
+                    <th scope="row">{{history.nutrients || ''}}</th>
+                    <th scope="row">{{history.transplanted || ''}}</th>
+                    <th scope="row">{{history.defeciencys || ''}}</th>
+                    <th scope="row">{{history.flushed || ''}}</th>
+                    <th scope="row">{{history.ph || ''}}</th>
+                    <th scope="row">{{history.ppm || ''}}</th>
+                    <th scope="row">{{history.height || ''}}</th>
+                    <!-- <td colspan="2">Larry the Bird</td> -->
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
     <button mat-raised-button color="accent" (click)="endFlower()" id="flower-end" *ngIf="!flower$.end">Harvest</button>
     <button mat-raised-button color="accent" (click)="addNote()" class="row" id="notes-add">
         Add Note

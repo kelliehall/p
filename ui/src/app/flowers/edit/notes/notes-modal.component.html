@@ -1,1 +1,60 @@
-todo
+<h1 mat-dialog-title>Add Note</h1>
+<div mat-dialog-content id="notes-modal">
+    <form [formGroup]="notesForm">
+        <mat-form-field class="row">
+            <input matInput placeholder="Note" formControlName="note">
+        </mat-form-field>
+
+        <mat-form-field class="row">
+            <input matInput [matDatepicker]="picker" placeholder="date" formControlName="date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <!-- TODO: Nutrients -->
+
+        <mat-slide-toggle [color]="'primary'" formControlName="transplanted" class="row">
+            Transplanted
+        </mat-slide-toggle>
+
+        <mat-slide-toggle [color]="'primary'" formControlName="flushed" class="row">
+            Flushed
+        </mat-slide-toggle>
+
+        <mat-form-field class="row">
+            <input matInput placeholder="Defeciencys" formControlName="defeciencys">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input type="number" matInput placeholder="pH In" formControlName="phIn">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input type="number" matInput placeholder="pH Out" formControlName="phOut">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input type="number" matInput placeholder="ppm In" formControlName="ppmIn">
+        </mat-form-field>
+        <mat-form-field>
+            <input type="number" matInput placeholder="ppm Out" formControlName="ppmOut">
+        </mat-form-field>
+        <mat-form-field>
+            <input type="number" matInput placeholder="height" formControlName="height">
+        </mat-form-field>
+
+
+        <!-- <mat-form-field class="row">
+            <mat-select placeholder="Strain" formControlName="strain" required>
+                <mat-option *ngFor="let strain of strains" [value]="strain._id">
+                    {{strain.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field> -->
+        <!-- 
+        <mat-form-field class="row" *ngIf="flowerForm.get('end').value">
+            <input matInput placeholder="Yield" formControlName="yield">
+        </mat-form-field> -->
+    </form>
+</div>
+<button mat-raised-button color="accent" (click)="save()" [disabled]="this.notesForm.invalid">Add</button>

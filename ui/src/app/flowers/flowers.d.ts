@@ -1,4 +1,5 @@
 export interface Flower {
+    _id: string,
     name: string,
     planted?: string,
     mother?: boolean,
@@ -7,5 +8,29 @@ export interface Flower {
     children: Array<string>,
     clone?: boolean,
     cloneStart?: string,
-    strain: string
+    strain: string,
+    history: Array<Notes>,
+}
+
+interface Notes {
+    note: string,
+    date: string,
+    nutrients: Array<Nute>,
+    transplanted: boolean,
+    defeciencys: string,
+    flushed: boolean,
+    ph: InOut,
+    ppm: InOut,
+    height: number
+}
+
+interface Nute {
+    name: string,
+    amount: string,
+    suggested: string
+}
+
+interface InOut {
+    in: number,
+    out: number
 }
