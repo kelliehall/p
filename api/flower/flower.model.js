@@ -31,6 +31,7 @@ var FlowerSchema = new Schema({
         transplanted: Boolean,
         defeciencys: String,
         flushed: Boolean,
+        watered: Boolean,
         ph: {
             in: Number,
             out: Number,

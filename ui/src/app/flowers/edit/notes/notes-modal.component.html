@@ -21,28 +21,42 @@
             Flushed
         </mat-slide-toggle>
 
+        <mat-slide-toggle [color]="'primary'" formControlName="watered" class="row">
+            Watered
+        </mat-slide-toggle>
+
+        <div class="row" *ngIf="watered.value">
+            <mat-form-field>
+                <input type="number" matInput placeholder="pH In" formControlName="phIn">
+            </mat-form-field>
+
+            <mat-form-field>
+                <input type="number" matInput placeholder="pH Out" formControlName="phOut">
+            </mat-form-field>
+        </div>
+
+        <div class="row" *ngIf="watered.value">
+            <mat-form-field>
+                <input type="number" matInput placeholder="ppm In" formControlName="ppmIn">
+            </mat-form-field>
+            <mat-form-field>
+                <input type="number" matInput placeholder="ppm Out" formControlName="ppmOut">
+            </mat-form-field>
+        </div>
+
         <mat-form-field class="row">
             <input matInput placeholder="Defeciencys" formControlName="defeciencys">
         </mat-form-field>
 
-        <mat-form-field>
-            <input type="number" matInput placeholder="pH In" formControlName="phIn">
-        </mat-form-field>
-
-        <mat-form-field>
-            <input type="number" matInput placeholder="pH Out" formControlName="phOut">
-        </mat-form-field>
-
-        <mat-form-field>
-            <input type="number" matInput placeholder="ppm In" formControlName="ppmIn">
-        </mat-form-field>
-        <mat-form-field>
-            <input type="number" matInput placeholder="ppm Out" formControlName="ppmOut">
-        </mat-form-field>
-        <mat-form-field>
+        <mat-form-field class="row">
             <input type="number" matInput placeholder="height" formControlName="height">
         </mat-form-field>
 
+        <!-- <div *ngFor="let nutrient of nutrients.controls; index as i" formArrayName="nutrients">
+            <div [formControlName]="name">
+                    {{nutrient}} x {{i}}
+            </div>
+        </div> -->
 
         <!-- <mat-form-field class="row">
             <mat-select placeholder="Strain" formControlName="strain" required>
@@ -57,4 +71,5 @@
         </mat-form-field> -->
     </form>
 </div>
-<button mat-raised-button color="accent" (click)="save()" [disabled]="this.notesForm.invalid">Add</button>
+<i class="fa fa-flask fa-2x" aria-hidden="true" (click)="newNute()"></i>
+<button mat-raised-button color="accent" class="pull-right" (click)="save()" [disabled]="this.notesForm.invalid">Add</button>

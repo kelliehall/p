@@ -19,6 +19,7 @@ interface Notes {
     transplanted: boolean,
     defeciencys: string,
     flushed: boolean,
+    watered: boolean,
     ph: InOut,
     ppm: InOut,
     height: number

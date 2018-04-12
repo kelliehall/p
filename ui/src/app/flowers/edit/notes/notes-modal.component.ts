@@ -23,6 +23,14 @@ export class NotesDialog implements OnInit {
         this.nutes = data.nutes;
     }
 
+    get watered() {
+        return this.notesForm.get('watered') as FormControl;
+    }
+
+    get nutrients() {
+        return this.notesForm.get('nutrients') as FormArray;
+    }
+
     ngOnInit() {
         this.notesForm = this.fb.group({
             note: new FormControl(''),
@@ -31,12 +39,24 @@ export class NotesDialog implements OnInit {
             transplanted: new FormControl(false),
             defeciencys: new FormControl(''),
             flushed: new FormControl(false),
+            watered: new FormControl(false),
             phIn: new FormControl(null),
             phOut: new FormControl(null),
             ppmIn: new FormControl(null),
             ppmOut: new FormControl(null),
             height: new FormControl(null)
         });
+    }
+
+    newNute() {
+        this.nutrients.push(
+            this.fb.group({
+                name: new FormControl(null),
+                amount: new FormControl(null),
+                suggested: new FormControl(null)
+            })
+        );
+        console.log(this.nutrients.controls);
     }
 
     save() {
