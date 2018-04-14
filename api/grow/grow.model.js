@@ -8,7 +8,7 @@ var GrowSchema = new Schema({
     flowers: [String],
     cycle: String,
     start: { type: String, required: true },
-    end: String,
+    harvested: String,
     nutrients: [String],
     notes: [{
         date: String,

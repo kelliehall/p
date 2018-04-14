@@ -52,8 +52,7 @@ export class NotesDialog implements OnInit {
         this.nutrients.push(
             this.fb.group({
                 name: new FormControl(null),
-                amount: new FormControl(null),
-                suggested: new FormControl(null)
+                amount: new FormControl(null)
             })
         );
         console.log(this.nutrients.controls);

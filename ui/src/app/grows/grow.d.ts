@@ -4,7 +4,7 @@ export interface Grow {
     flowers?: Array<string>,
     cycle?: string,
     start: string,
-    end?: string,
+    harvested?: string,
     nutrients?: Array<string>,
     notes?: Notes[],
     status?: string

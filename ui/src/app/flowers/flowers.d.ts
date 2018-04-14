@@ -1,14 +1,22 @@
 export interface Flower {
     _id: string,
     name: string,
+    strain: string,
+    grow?: string,
+    
     planted?: string,
+    harvested?: string,
+    yield?: string,
+
+    genetics?: Array<string>,
+    breeder: string,
+
     mother?: boolean,
-    genetics?: string,
-    grow?: Array<string>,
     children: Array<string>,
+
     clone?: boolean,
     cloneStart?: string,
-    strain: string,
+    
     history: Array<Notes>,
 }
 
@@ -22,13 +30,15 @@ interface Notes {
     watered: boolean,
     ph: InOut,
     ppm: InOut,
-    height: number
+    height: string,
+    rate: string,
+    timing: string,
+    amount: string
 }
 
 interface Nute {
     name: string,
-    amount: string,
-    suggested: string
+    amount: string
 }
 
 interface InOut {

@@ -29,7 +29,7 @@ export class FlowerDialog implements OnInit {
             identifier: new FormControl('', Validators.required),
 
             planted: new FormControl(moment(), Validators.required),
-            end: new FormControl(''),
+            harvested: new FormControl(''),
             yield: new FormControl(''),
 
             grow: new FormControl(''),

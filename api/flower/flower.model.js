@@ -5,12 +5,13 @@ var Schema = mongoose.Schema;
 
 var FlowerSchema = new Schema({
     active: Boolean,
-    strain: String,
     identifier: { type: String, required: true },
-    planted: { type: String },
-    end: { type: String },
-    yield: String,
+    strain: String,
     grow: { type: String },
+    
+    planted: { type: String },
+    harvested: { type: String },
+    yield: String,
 
     genetics: { type: String },
     breeder: { type: String },
@@ -25,8 +26,7 @@ var FlowerSchema = new Schema({
         date: String,
         nutrients: [{
             name: String,
-            amount: String,
-            suggested: String
+            amount: String
         }],
         transplanted: Boolean,
         defeciencys: String,
@@ -40,7 +40,10 @@ var FlowerSchema = new Schema({
             in: Number,
             out: Number
         },
-        height: Number
+        rate: String,
+        timing: String,
+        amount: String,
+        height: String
     }]
 });
 

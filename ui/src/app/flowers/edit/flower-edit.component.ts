@@ -66,7 +66,7 @@ export class FlowerEditComponent implements OnInit {
         return grow ? grow.name : '';
     }
 
-    endFlower() {
+    harvestedFlower() {
         console.log(this.flower$);
     }
 

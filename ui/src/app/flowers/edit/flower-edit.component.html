@@ -29,7 +29,7 @@
         </table>
 
     </div>
-    <button mat-raised-button color="accent" (click)="endFlower()" id="flower-end" *ngIf="!flower$.end">Harvest</button>
+    <button mat-raised-button color="accent" (click)="harvestedFlower()" id="flower-harvested" *ngIf="!flower$.harvested">Harvest</button>
     <button mat-raised-button color="accent" (click)="addNote()" class="row" id="notes-add">
         Add Note
     </button>

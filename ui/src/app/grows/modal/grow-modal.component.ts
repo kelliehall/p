@@ -21,7 +21,7 @@ export class GrowDialog implements OnInit {
             flowers: new FormArray([]),
             cycle: new FormControl(''),
             start: new FormControl(moment(), Validators.required),
-            end: new FormControl(''),
+            harvested: new FormControl(''),
             nutrients: new FormArray([]),
             notes: new FormArray([]),
             status: new FormControl('')

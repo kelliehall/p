@@ -15,8 +15,8 @@
   .fa-times {
     cursor: pointer;
   }
-  #flower-add{
-    position: absolute;
+  #flower-add {
+    position: fixed;
     bottom: 1vh;
     right: 3vh;
   }
@@ -44,7 +44,7 @@
     bottom: 1vh;
     right: 3vh;
   }
-  #flower-end {
+  #flower-harvested {
     position: absolute;
     bottom: 6vh;
     right: 3vh;

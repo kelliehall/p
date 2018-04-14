@@ -27,15 +27,15 @@
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
 
-        <mat-slide-toggle [color]="'primary'" formControlName="end" class="row">
-            Ended
+        <mat-slide-toggle [color]="'primary'" formControlName="harvested" class="row">
+            Harvested
         </mat-slide-toggle>
-        <mat-form-field class="row" *ngIf="flowerForm.get('end').value">
-            <input matInput [matDatepicker]="picker" placeholder="Harvested" formControlName="end">
+        <mat-form-field class="row" *ngIf="flowerForm.get('harvested').value">
+            <input matInput [matDatepicker]="picker" placeholder="Date Harvested" formControlName="harvested">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
-        <mat-form-field class="row" *ngIf="flowerForm.get('end').value">
+        <mat-form-field class="row" *ngIf="flowerForm.get('harvested').value">
             <input matInput placeholder="Yield" formControlName="yield">
         </mat-form-field>
 
@@ -51,7 +51,7 @@
             Clone
         </mat-slide-toggle>
         <mat-form-field class="row" *ngIf="flowerForm.get('clone').value">
-            <input matInput [matDatepicker]="picker" placeholder="Cloned" formControlName="cloneStart">
+            <input matInput [matDatepicker]="picker" placeholder="Clone Date" formControlName="cloneStart">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
