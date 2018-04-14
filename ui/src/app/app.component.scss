@@ -1,19 +1,15 @@
-$fogra: #040404;
-$timber: #d7d9ce;
-$seaweed: #0c7489;
-$bgreen: #119da4;
-$mgreen: #13505B;
+@import '../variables.scss';
 
 .nav {
-    background: $seaweed;
+    background: $artichoke;
     border-radius: 1%;
     .nav-link {
-        color: $fogra;
+        color: $jet;
         &:hover {
-            color: $mgreen;
+            color: $rocker;
         }
         &.active {
-            color: $timber;
+            color: $ash;
         }
     }
 }

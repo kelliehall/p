@@ -1,21 +1,18 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
-@import "~@angular/material/prebuilt-themes/purple-green.css";
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
 @import "~font-awesome/css/font-awesome.css";
 
-$fogra: #040404;
-$timber: #d7d9ce;
-$seaweed: #0c7489;
-$bgreen: #119da4;
-$mgreen: #13505B;
+@import './variables.scss';
+
 
 body {
-    background: $seaweed;
+    background: $artichoke;
     .jumbotron {
-        background: $timber;
+        background: $rocker;
     }
     .card {
-        background: $mgreen;
-        color: $timber;
+        background: $rocker;
+        color: $jet;
         margin: 1em;
         cursor: pointer;
     }

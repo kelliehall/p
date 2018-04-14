@@ -1,12 +1,7 @@
-$fogra: #040404;
-$timber: #d7d9ce;
-$seaweed: #0c7489;
-$bgreen: #119da4;
-$mgreen: #13505B;
+@import '../../variables.scss';
 
 #flower-container {
   margin-top: 1vh;
-  height: calc(91vh);
   .card {
     display: flex;
     justify-content: space-evenly;
@@ -38,10 +33,11 @@ $mgreen: #13505B;
 
 #flower-details {
   height: calc(95vh);
-  .details{
-    background: $timber;
+  .details {
+    background: $rocker;
     padding: 1em;
     text-align: center;
+    border: 1px solid $jet;
   }
   #notes-add {
     position: absolute;
