@@ -8,7 +8,7 @@ export class YearPipe implements PipeTransform {
     }
 }
 
-@Pipe({name: 'history'})
+@Pipe({name: 'mfull'})
 export class HistoryPipe implements PipeTransform {
     transform(date: string) {
         return moment(new Date(date)).local().format('MM/DD/YYYY hh:mm a');

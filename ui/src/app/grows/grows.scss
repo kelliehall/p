@@ -1,6 +1,5 @@
 #grow-container {
     margin-top: 1vh;
-    height: calc(91vh);
     .card {
       display: flex;
       justify-content: space-evenly;
@@ -15,7 +14,7 @@
       cursor: pointer;
     }
     #grow-add{
-      position: absolute;
+      position: fixed;
       bottom: 1vh;
       right: 3vh;
     }

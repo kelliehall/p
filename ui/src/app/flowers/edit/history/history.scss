@@ -1,0 +1,45 @@
+@import '../../../../variables.scss';
+
+.history {
+    #legend {
+        margin-top: 10px;
+        display: flex;
+        justify-content: end;
+        label {
+            margin-right: 10px;
+            font-size: 0.85em;
+            color: $jet;
+        }
+    }
+    .transplanted > .fa-circle {
+        color: #645e9d;
+    }
+    .flushed > .fa-circle {
+        color: #93a3b1;
+    }
+    .watered > .fa-circle {
+        color: #99d5c9;
+    }
+    .defeciencys > .fa-circle {
+        color: #ffa69e;
+    }
+    table {
+        margin-top: 15px;
+        th {
+            font-weight: normal;
+        }
+        td {
+            font-weight: lighter;
+        }
+        th, td {
+            border: 1px solid $jet;
+            border-radius: 2px;
+        }
+        span, p {
+            font-size: 0.85em;
+        }
+        .fa-circle {
+            margin-right: 3px;
+        }
+    }
+}

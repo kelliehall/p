@@ -9,6 +9,7 @@ import { FlowerDialog } from './modal';
 import { PipeModule } from '../common/pipe.module';
 import { FlowerEditComponent } from './edit/flower-edit.component';
 import { NotesDialog } from './edit/notes';
+import { HistoryComponent } from './edit/history/history.component';
 
 @NgModule({
     entryComponents: [
@@ -19,7 +20,8 @@ import { NotesDialog } from './edit/notes';
         FlowersComponent,
         FlowerDialog,
         NotesDialog,
-        FlowerEditComponent
+        FlowerEditComponent,
+        HistoryComponent
     ],
     imports: [
         CommonModule,

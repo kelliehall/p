@@ -22,7 +22,6 @@ export class FlowerEditComponent implements OnInit {
     strains: Strain[] = [];
     grows: Grow[] = [];
     nutes: Nute[] = [];
-    tableHeaders = ['date', 'note', 'nutrients', 'transplanted', 'defeciencys', 'flushed', 'ph', 'ppm', 'height'];
 
     constructor(private route: ActivatedRoute,
         private growsService: GrowsService,

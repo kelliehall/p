@@ -1,6 +1,5 @@
 #nute-container {
   margin-top: 1vh;
-  height: calc(91vh);
   .card {
     display: flex;
     justify-content: space-evenly;
@@ -15,7 +14,7 @@
     cursor: pointer;
   }
   #nute-add{
-    position: absolute;
+    position: fixed;
     bottom: 1vh;
     right: 3vh;
   }

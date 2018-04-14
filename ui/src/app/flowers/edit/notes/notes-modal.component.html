@@ -49,27 +49,26 @@
         </mat-form-field>
 
         <mat-form-field class="row">
-            <input type="number" matInput placeholder="height" formControlName="height">
+            <input matInput placeholder="Height" formControlName="height">
         </mat-form-field>
 
-        <!-- <div *ngFor="let nutrient of nutrients.controls; index as i" formArrayName="nutrients">
-            <div [formControlName]="name">
-                    {{nutrient}} x {{i}}
+        <ng-container formArrayName="nutrients">
+            <div *ngFor="let nutrient of nutrients.controls; index as i" [formGroupName]="i" class="col-sm-5 nutrient">
+                <mat-form-field class="row">
+                    <mat-select placeholder="Nutrient" formControlName="name">
+                        <mat-option *ngFor="let nute of nutes" [value]="nute._id">
+                            {{nute.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="row" *ngIf="nutrient.value.name">
+                    <input matInput placeholder="Amount" formControlName="amount">
+                </mat-form-field>
             </div>
-        </div> -->
-
-        <!-- <mat-form-field class="row">
-            <mat-select placeholder="Strain" formControlName="strain" required>
-                <mat-option *ngFor="let strain of strains" [value]="strain._id">
-                    {{strain.name}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field> -->
-        <!-- 
-        <mat-form-field class="row" *ngIf="flowerForm.get('harvested').value">
-            <input matInput placeholder="Yield" formControlName="yield">
-        </mat-form-field> -->
+        </ng-container>
     </form>
 </div>
-<i class="fa fa-flask fa-2x" aria-hidden="true" (click)="newNute()"></i>
-<button mat-raised-button color="accent" class="pull-right" (click)="save()" [disabled]="this.notesForm.invalid">Add</button>
+<button mat-raised-button color="accent" (click)="newNute()">
+    <i class="fa fa-flask fa-2x"></i>
+</button>
+<button mat-raised-button color="accent" class="pull-right" (click)="save()" [disabled]="this.notesForm.invalid">Save</button>

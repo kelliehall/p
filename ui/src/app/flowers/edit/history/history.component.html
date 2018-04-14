@@ -1,0 +1,33 @@
+<div class="history">
+    <div id="legend">
+        <span class="transplanted"> <i class="fa fa-circle"></i> <label>transplanted</label></span>
+        <span class="flushed"> <i class="fa fa-circle"></i> <label>flushed</label></span>
+        <span class="watered"> <i class="fa fa-circle"></i> <label>watered</label></span>
+        <span class="defeciencys"> <i class="fa fa-circle"></i> <label>defeciencys</label></span>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col" *ngFor="let header of tableHeaders" class="col-sm-{{header.grid}}">{{header.name}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let history of flower.history">
+                <td scope="row">
+                    <span class="date">{{history.date || '' | mfull}}</span>
+                    <span class="pull-right defeciencys" *ngIf="history.defeciencys"> <i class="fa fa-circle"></i> </span>
+                    <span class="pull-right watered" *ngIf="history.watered"> <i class="fa fa-circle"></i> </span>
+                    <span class="pull-right flushed" *ngIf="history.flushed"> <i class="fa fa-circle"></i> </span>
+                    <span class="pull-right transplanted" *ngIf="history.transplanted"><i class="fa fa-circle"></i></span>
+                </td>
+                <td scope="row"><span>{{history.height || ''}}</span></td>
+                <td scope="row"><span>{{history.note || ''}}</span></td>
+                <td scope="row">
+                    <ng-container *ngFor="let nutrient of history.nutrients">
+                        <p>{{getNutrient(nutrient.name)}} - {{nutrient.amount}}</p>
+                    </ng-container>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
