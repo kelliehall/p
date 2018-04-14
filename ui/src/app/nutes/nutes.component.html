@@ -3,12 +3,14 @@
         <i class="fa fa-flask" aria-hidden="true"></i>
         Nutrients</h1>
     <hr class="my-4">
-    <div class="card text-center" *ngFor="let nute of nutes">
-        <div class="card-block">
-            <h4 class="card-title">{{nute.name}}</h4>
-            <p class="card-text">need : {{nute.need}}</p>
-            <i class="fa fa-times" aria-hidden="true" (click)="delete(nute)"></i>
+    <ng-container *ngFor="let nute of nutes">
+        <div class="card text-center">
+            <div class="card-block">
+                <h4 class="card-title">{{nute.name}}</h4>
+                <p class="card-text">need : {{nute.need}}</p>
+                <i class="fa fa-times" aria-hidden="true" (click)="delete(nute); $event.stopPropagation();"></i>
+            </div>
         </div>
-    </div>
+    </ng-container>
     <button mat-raised-button color="accent" (click)="addNute()" id="nute-add">Add</button>
 </div>

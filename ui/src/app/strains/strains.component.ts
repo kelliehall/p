@@ -31,7 +31,7 @@ export class StrainsComponent implements OnInit {
 
     delete(strain: Strain) {
         this.strainsService.deleteStrain(strain).subscribe(() => {
-            this.getStrains();
+            this.strainsService.updateStrains();
         });
     }
 }

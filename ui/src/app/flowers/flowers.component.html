@@ -3,14 +3,16 @@
         <i class="fa fa-leaf" aria-hidden="true"></i>
         Flowers</h1>
     <hr class="my-4">
-    <div class="card text-center" *ngFor="let flower of flowers" [routerLink]="['/flowers/', flower._id]">
-        <div class="card-block">
-            <h4 class="card-title">{{flower.identifier}}</h4>
-            <p class="card-text">grow : {{findGrow(flower.grow)}}</p>
-            <p class="card-text">strain : {{findStrain(flower.strain)}}</p>
-            <p class="card-text">planted : {{flower.planted | year}}</p>
-            <i class="fa fa-times" aria-hidden="true" (click)="delete(flower)"></i>
+    <ng-container *ngFor="let flower of flowers">
+        <div class="card text-center" [routerLink]="['/flowers/', flower._id]">
+            <div class="card-block">
+                <h4 class="card-title">{{flower.identifier}}</h4>
+                <p class="card-text">grow : {{findGrow(flower.grow)}}</p>
+                <p class="card-text">strain : {{findStrain(flower.strain)}}</p>
+                <p class="card-text">planted : {{flower.planted | year}}</p>
+                <i class="fa fa-times" (click)="delete(flower); $event.stopPropagation();"></i>
+            </div>
         </div>
-    </div>
+    </ng-container>
     <button mat-raised-button color="accent" (click)="addFlower()" id="flower-add">Add</button>
 </div>

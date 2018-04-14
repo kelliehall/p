@@ -29,7 +29,7 @@ export class NutesComponent implements OnInit {
     addNute() {
         const modal = this.nuteDialog.open(NuteDialog);
         modal.afterClosed().subscribe(res => {
-            this.getNutes();
+            this.nuteService.updateNutes();
         });
     }
 

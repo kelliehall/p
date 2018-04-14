@@ -47,7 +47,7 @@ export class GrowsComponent implements OnInit {
 
     delete(grow: Grow) {
         this.growsService.deleteGrow(grow).subscribe(() => {
-            this.getGrows();
+            this.growsService.updateGrows();
         });
     }
 

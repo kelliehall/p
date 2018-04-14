@@ -50,7 +50,7 @@ export class FlowersComponent implements OnInit {
 
     delete(flower: Flower) {
         this.flowersService.deleteFlower(flower).subscribe(() => {
-            this.getFlowers();
+            this.flowersService.updateFlowers();
         });
     }
 

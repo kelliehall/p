@@ -3,12 +3,14 @@
         <i class="fa fa-leaf" aria-hidden="true"></i>
         Grows</h1>
     <hr class="my-4">
-    <div class="card text-center" *ngFor="let grow of grows">
-        <div class="card-block">
-            <h4 class="card-title">{{grow.name}}</h4>
-            <p class="card-text">start : {{grow.start | year}}</p>
-            <i class="fa fa-times" aria-hidden="true" (click)="delete(grow)"></i>
+    <ng-container *ngFor="let grow of grows">
+        <div class="card text-center">
+            <div class="card-block">
+                <h4 class="card-title">{{grow.name}}</h4>
+                <p class="card-text">start : {{grow.start | year}}</p>
+                <i class="fa fa-times" aria-hidden="true" (click)="delete(grow); $event.stopPropagation();"></i>
+            </div>
         </div>
-    </div>
+    </ng-container>
     <button mat-raised-button color="accent" (click)="addGrow()" id="grow-add">Add</button>
 </div>

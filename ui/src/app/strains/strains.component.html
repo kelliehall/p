@@ -3,14 +3,16 @@
         <i class="fa fa-tree" aria-hidden="true"></i>
         Strains</h1>
     <hr class="my-4">
-    <div class="card text-center" *ngFor="let strain of strains">
-        <div class="card-block">
-            <h4 class="card-title">{{strain.name}}</h4>
-            <p class="card-text">breeder : {{strain.breeder}}</p>
-            <p class="card-text">genetics : {{strain.genetics}}</p>
-            <p class="card-text">source : {{strain.source}}</p>
-            <i class="fa fa-times" aria-hidden="true" (click)="delete(strain)"></i>
+    <ng-container *ngFor="let strain of strains">
+        <div class="card text-center">
+            <div class="card-block">
+                <h4 class="card-title">{{strain.name}}</h4>
+                <p class="card-text">breeder : {{strain.breeder}}</p>
+                <p class="card-text">genetics : {{strain.genetics}}</p>
+                <p class="card-text">source : {{strain.source}}</p>
+                <i class="fa fa-times" aria-hidden="true" (click)="delete(strain); $event.stopPropagation();"></i>
+            </div>
         </div>
-    </div>
+    </ng-container>
     <button mat-raised-button color="accent" (click)="addStrain()" id="strain-add">Add</button>
 </div>
