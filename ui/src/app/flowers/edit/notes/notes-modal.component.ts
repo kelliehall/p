@@ -38,6 +38,7 @@ export class NotesDialog implements OnInit {
             nutrients: new FormArray([]),
             transplanted: new FormControl(false),
             defeciencys: new FormControl(''),
+            flowered: new FormControl(false),
             flushed: new FormControl(false),
             watered: new FormControl(false),
             phIn: new FormControl(null),
@@ -55,7 +56,6 @@ export class NotesDialog implements OnInit {
                 amount: new FormControl(null)
             })
         );
-        console.log(this.nutrients.controls);
     }
 
     save() {
@@ -65,4 +65,5 @@ export class NotesDialog implements OnInit {
             this.notesDialog.closeAll();
         });
     }
+
 }

@@ -32,7 +32,6 @@
 }
 
 #flower-details {
-  height: calc(95vh);
   .details {
     background: $rocker;
     border-radius: 2px;
@@ -41,14 +40,14 @@
     border: 1px solid $jet;
   }
   #notes-add {
-    position: absolute;
+    position: fixed;
     bottom: 1vh;
-    right: 3vh;
+    right: 6vh;
   }
   #flower-harvested {
-    position: absolute;
+    position: fixed;
     bottom: 6vh;
-    right: 3vh;
+    right: 6vh;
   }
 
 }

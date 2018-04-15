@@ -1,11 +1,11 @@
 #notes-modal {
     .row {
       width: 100%;
+      mat-slide-toggle {
+        margin-right: 10px;
+      }
     }
     form {
       padding: 1em;
-    }
-    .nutrient {
-      float: left;
     }
   }

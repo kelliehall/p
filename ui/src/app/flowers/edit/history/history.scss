@@ -23,6 +23,9 @@
     .defeciencys > .fa-circle {
         color: #ffa69e;
     }
+    .flowered > .fa-circle {
+        color: #ac80a0;
+    }
     table {
         margin-top: 15px;
         th {
@@ -40,6 +43,12 @@
         }
         .fa-circle {
             margin-right: 3px;
+        }
+        .delete {
+            width: 1%;
+        }
+        .fa-times {
+            cursor: pointer;
         }
     }
 }

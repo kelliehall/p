@@ -1,67 +1,74 @@
 <h1 mat-dialog-title>Add Note</h1>
 <div mat-dialog-content id="notes-modal">
     <form [formGroup]="notesForm">
+        <div class="row col-sm-12">
+            <mat-form-field class="col-sm-6">
+                <input matInput [matDatepicker]="picker" placeholder="date" formControlName="date">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field class="col-sm-6">
+                <input matInput placeholder="Height" formControlName="height">
+            </mat-form-field>
+        </div>
+
+        <div class="row col-sm-12"> 
+            <mat-slide-toggle [color]="'primary'" formControlName="transplanted" >
+                Transplanted
+            </mat-slide-toggle>
+
+            <mat-slide-toggle [color]="'primary'" formControlName="flowered">
+                Switched to Flower
+            </mat-slide-toggle>
+
+            <mat-slide-toggle [color]="'primary'" formControlName="flushed">
+                Flushed
+            </mat-slide-toggle>
+        </div>
+
+        <div class="col-sm-12">
+            <mat-slide-toggle [color]="'primary'" formControlName="watered" class="row">
+                Watered
+            </mat-slide-toggle>
+    
+            <div class="row" *ngIf="watered.value">
+                <mat-form-field>
+                    <input type="number" matInput placeholder="pH In" formControlName="phIn">
+                </mat-form-field>
+    
+                <mat-form-field>
+                    <input type="number" matInput placeholder="pH Out" formControlName="phOut">
+                </mat-form-field>
+            </div>
+            
+            <div class="row" *ngIf="watered.value">
+                <mat-form-field>
+                    <input type="number" matInput placeholder="ppm In" formControlName="ppmIn">
+                </mat-form-field>
+                <mat-form-field>
+                    <input type="number" matInput placeholder="ppm Out" formControlName="ppmOut">
+                </mat-form-field>
+            </div>
+        </div>
+
         <mat-form-field class="row">
             <input matInput placeholder="Note" formControlName="note">
         </mat-form-field>
 
         <mat-form-field class="row">
-            <input matInput [matDatepicker]="picker" placeholder="date" formControlName="date">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-
-        <!-- TODO: Nutrients -->
-
-        <mat-slide-toggle [color]="'primary'" formControlName="transplanted" class="row">
-            Transplanted
-        </mat-slide-toggle>
-
-        <mat-slide-toggle [color]="'primary'" formControlName="flushed" class="row">
-            Flushed
-        </mat-slide-toggle>
-
-        <mat-slide-toggle [color]="'primary'" formControlName="watered" class="row">
-            Watered
-        </mat-slide-toggle>
-
-        <div class="row" *ngIf="watered.value">
-            <mat-form-field>
-                <input type="number" matInput placeholder="pH In" formControlName="phIn">
-            </mat-form-field>
-
-            <mat-form-field>
-                <input type="number" matInput placeholder="pH Out" formControlName="phOut">
-            </mat-form-field>
-        </div>
-
-        <div class="row" *ngIf="watered.value">
-            <mat-form-field>
-                <input type="number" matInput placeholder="ppm In" formControlName="ppmIn">
-            </mat-form-field>
-            <mat-form-field>
-                <input type="number" matInput placeholder="ppm Out" formControlName="ppmOut">
-            </mat-form-field>
-        </div>
-
-        <mat-form-field class="row">
             <input matInput placeholder="Defeciencys" formControlName="defeciencys">
         </mat-form-field>
 
-        <mat-form-field class="row">
-            <input matInput placeholder="Height" formControlName="height">
-        </mat-form-field>
-
         <ng-container formArrayName="nutrients">
-            <div *ngFor="let nutrient of nutrients.controls; index as i" [formGroupName]="i" class="col-sm-5 nutrient">
-                <mat-form-field class="row">
+            <div *ngFor="let nutrient of nutrients.controls; index as i" [formGroupName]="i" class="row">
+                <mat-form-field>
                     <mat-select placeholder="Nutrient" formControlName="name">
                         <mat-option *ngFor="let nute of nutes" [value]="nute._id">
                             {{nute.name}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
-                <mat-form-field class="row" *ngIf="nutrient.value.name">
+                <mat-form-field *ngIf="nutrient.value.name">
                     <input matInput placeholder="Amount" formControlName="amount">
                 </mat-form-field>
             </div>

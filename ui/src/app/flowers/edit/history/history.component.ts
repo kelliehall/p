@@ -2,6 +2,8 @@ import { Component, Input } from '@angular/core';
 import { Flower } from '../../flowers';
 import { NutesService } from '../../../nutes/nutes.service';
 import { Nute } from '../../../nutes/nutes';
+import { FlowerService } from '../../flowers.service';
+import * as lodash from 'lodash';
 
 @Component({
     selector: 'history',
@@ -13,17 +15,34 @@ export class HistoryComponent {
     @Input() flower: Flower;
     nutes: Nute[];
     tableHeaders = [
-        { name: 'date', grid: 2 },
-        { name: 'height', grid: 2 },
-        { name: 'note', grid: 3 },
-        { name: 'nutrients', grid: 3 }
+        { name: 'date', class: 'col-sm-2' },
+        { name: 'height', class: 'col-sm-2' },
+        { name: 'note', class: 'col-sm-3' },
+        { name: 'nutrients', class: 'col-sm-3' },
+        { name: '', class: 'delete' }
     ];
 
-    constructor(private nutesService: NutesService) {
+    constructor(private nutesService: NutesService,
+        private flowersService: FlowerService) {
         this.nutesService.getNutes().subscribe(data => this.nutes = data);
     }
 
     getNutrient(id) {
-        return this.nutes.find(nute => nute._id === id).name || 'Unknown';
+        if (!this.nutes.length) {
+            return 'Loading';
+        } else {
+            return this.nutes.find(nute => nute._id === id).name || 'Unknown';
+        }
+    }
+
+    sortHistory(history) {
+        return lodash.sortBy(history, (h) => h.date).reverse();
+    }
+
+    delete(id) {
+        lodash.remove(this.flower.history, { '_id': id });
+        this.flowersService.updatebyId(this.flower._id, this.flower).subscribe(() => {
+            this.flowersService.updateFlowers();
+        });
     }
 }

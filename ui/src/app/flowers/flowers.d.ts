@@ -1,9 +1,9 @@
 export interface Flower {
     _id: string,
-    name: string,
+    identifier: string,
     strain: string,
     grow?: string,
-    
+
     planted?: string,
     harvested?: string,
     yield?: string,
@@ -16,11 +16,12 @@ export interface Flower {
 
     clone?: boolean,
     cloneStart?: string,
-    
+
     history: Array<Notes>,
 }
 
 interface Notes {
+    _id: string,
     note: string,
     date: string,
     nutrients: Array<Nute>,
@@ -33,7 +34,8 @@ interface Notes {
     height: string,
     rate: string,
     timing: string,
-    amount: string
+    amount: string,
+    flowered: boolean
 }
 
 interface Nute {

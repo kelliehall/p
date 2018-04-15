@@ -43,7 +43,8 @@ var FlowerSchema = new Schema({
         rate: String,
         timing: String,
         amount: String,
-        height: String
+        height: String,
+        flowered: Boolean
     }]
 });
 

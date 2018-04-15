@@ -13,6 +13,7 @@ import { FlowerModule } from './flowers/flowers.module';
 import { GrowsModule } from './grows/grows.module';
 import { StrainsModule } from './strains/strains.module';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { PipeModule } from './common/pipe.module';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
     BrowserAnimationsModule,
     HttpClientModule,
     MatMomentDateModule,
+    PipeModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

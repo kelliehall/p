@@ -1,42 +1,18 @@
 <div id="dashboard">
-    <div class="jumbotron" [routerLink]="['/nutes']">
-        <h1 class="display-4">
-            <i class="fa fa-flask" aria-hidden="true"></i>
-        </h1>
-        <h1 class="display-4">
-            Nutrients
-        </h1>
+    <div id="flowers" class="col-sm-8">
+        <h3>Flowers</h3>
+        <ul class="list-group">
+            <li class="list-group-item col-sm-4" *ngFor="let flower of flowers" [routerLink]="['/flowers', flower._id]">
+                <span class="col-sm-12">{{flower.identifier}} - ({{findStrain(flower.strain)}})</span>
+                <span class="col-sm-12">{{findGrow(flower.grow)}} - {{flower.planted | findage}} days</span>
+                <i class="fa fa-chevron-right pull-right"></i>
+            </li>
+        </ul>
     </div>
-    <div class="jumbotron" [routerLink]="['/flowers']">
-        <h1 class="display-4">
-            <i class="fa fa-leaf" aria-hidden="true"></i>
-        </h1>
-        <h1 class="display-4">
-            Flowers
-        </h1>
+    <div id="grows" class="col-sm-4">
+        <h3>Grows</h3>
     </div>
-    <div class="jumbotron" [routerLink]="['/grows']">
-        <h1 class="display-4">
-            <i class="fa fa-leaf" aria-hidden="true"></i>
-        </h1>
-        <h1 class="display-4">
-            Grows
-        </h1>
-    </div>
-    <!-- <div class="jumbotron" [routerLink]="['/cycles']">
-        <h1 class="display-4">
-            <i class="fa fa-flask" aria-hidden="true"></i>
-        </h1>
-        <h1 class="display-4">
-            Cycles
-        </h1>
-    </div> -->
-    <div class="jumbotron" [routerLink]="['/strains']">
-        <h1 class="display-4">
-            <i class="fa fa-tree" aria-hidden="true"></i>
-        </h1>
-        <h1 class="display-4">
-            Strains
-        </h1>
+    <div id="nutrients" class="col-sm-4">
+        <h3>Nutrients</h3>
     </div>
 </div>

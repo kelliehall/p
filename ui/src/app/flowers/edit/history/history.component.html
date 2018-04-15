@@ -4,17 +4,19 @@
         <span class="flushed"> <i class="fa fa-circle"></i> <label>flushed</label></span>
         <span class="watered"> <i class="fa fa-circle"></i> <label>watered</label></span>
         <span class="defeciencys"> <i class="fa fa-circle"></i> <label>defeciencys</label></span>
+        <span class="flowered"> <i class="fa fa-circle"></i> <label>switch to flower</label></span>
     </div>
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th scope="col" *ngFor="let header of tableHeaders" class="col-sm-{{header.grid}}">{{header.name}}</th>
+                <th scope="col" *ngFor="let header of tableHeaders" class="{{header.class}}">{{header.name}}</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let history of flower.history">
+            <tr *ngFor="let history of sortHistory(flower.history); index as i">
                 <td scope="row">
                     <span class="date">{{history.date || '' | mfull}}</span>
+                    <span class="pull-right flowered" *ngIf="history.flowered"> <i class="fa fa-circle"></i> </span>
                     <span class="pull-right defeciencys" *ngIf="history.defeciencys"> <i class="fa fa-circle"></i> </span>
                     <span class="pull-right watered" *ngIf="history.watered"> <i class="fa fa-circle"></i> </span>
                     <span class="pull-right flushed" *ngIf="history.flushed"> <i class="fa fa-circle"></i> </span>
@@ -27,6 +29,7 @@
                         <p>{{getNutrient(nutrient.name)}} - {{nutrient.amount}}</p>
                     </ng-container>
                 </td>
+                <td><i class="fa fa-times" (click)="delete(history._id)"></i></td>
             </tr>
         </tbody>
     </table>
