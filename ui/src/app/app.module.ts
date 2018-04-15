@@ -12,6 +12,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FlowerModule } from './flowers/flowers.module';
 import { GrowsModule } from './grows/grows.module';
 import { StrainsModule } from './strains/strains.module';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,9 @@ import { StrainsModule } from './strains/strains.module';
     provide: HTTP_INTERCEPTORS,
     useClass: ApiInterceptor,
     multi: true
+  }, {
+    provide: LocationStrategy,
+    useClass: HashLocationStrategy
   }],
   bootstrap: [AppComponent]
 })
