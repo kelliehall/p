@@ -2,7 +2,7 @@ import { Component, EventEmitter, OnInit } from '@angular/core';
 import * as moment from 'moment';
 import { NutesService } from './nutes.service';
 import { Nute } from './nutes';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { MatDialog } from '@angular/material';
 import { NuteDialog } from './modal';
 import { EventListener } from '@angular/core/src/debug/debug_node';

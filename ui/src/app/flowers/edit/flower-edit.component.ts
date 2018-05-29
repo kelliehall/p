@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { Flower } from '../flowers';
 import { FlowerService } from '../flowers.service';

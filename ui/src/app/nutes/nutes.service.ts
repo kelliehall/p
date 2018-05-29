@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Config } from '../app.config';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { Nute } from './nutes';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class NutesService {
