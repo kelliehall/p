@@ -24,7 +24,7 @@ export class HistoryComponent {
 
     constructor(private nutesService: NutesService,
         private flowersService: FlowerService) {
-        this.nutesService.getNutes().subscribe(data => this.nutes = data);
+        this.nutesService.nutes.subscribe(data => this.nutes = data);
     }
 
     getNutrient(id) {

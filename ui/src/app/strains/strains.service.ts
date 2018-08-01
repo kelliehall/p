@@ -14,7 +14,7 @@ export class StrainsService {
         );
     }
 
-    getStrains(): Observable<any> {
+    get strains(): Observable<Strain[]> {
         return this.strains$;
     }
 

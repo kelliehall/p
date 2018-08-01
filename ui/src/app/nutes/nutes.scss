@@ -1,4 +1,4 @@
-#nute-container {
+.nute-container {
   margin-top: 1vh;
   .card {
     display: flex;
@@ -13,13 +13,13 @@
   .fa-times {
     cursor: pointer;
   }
-  #nute-add{
+  .nute-add{
     position: fixed;
     bottom: 1vh;
     right: 3vh;
   }
 }
-#nute-modal {
+.nute-modal {
   .row {
     width: 100%;
   }

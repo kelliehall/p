@@ -1,6 +1,6 @@
 @import '../../variables.scss';
 
-#flower-container {
+.flower-container {
   margin-top: 1vh;
   .card {
     display: flex;
@@ -15,14 +15,14 @@
   .fa-times {
     cursor: pointer;
   }
-  #flower-add {
+  .flower-add {
     position: fixed;
     bottom: 1vh;
     right: 3vh;
   }
 }
 
-#flower-modal {
+.flower-modal {
   .row {
     width: 100%;
   }
@@ -31,7 +31,7 @@
   }
 }
 
-#flower-details {
+.flower-details {
   .details {
     background: $rocker;
     border-radius: 2px;
@@ -39,12 +39,12 @@
     text-align: center;
     border: 1px solid $jet;
   }
-  #notes-add {
+  .notes-add {
     position: fixed;
     bottom: 1vh;
     right: 6vh;
   }
-  #flower-harvested {
+  .flower-harvested {
     position: fixed;
     bottom: 6vh;
     right: 6vh;

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Flower } from './flowers';
 import { FlowerService } from './flowers.service';
 import { MatDialog } from '@angular/material';
@@ -12,7 +12,7 @@ import { Grow } from '../grows/grow';
     templateUrl: './flowers.component.html',
     styleUrls: ['./flowers.scss']
 })
-export class FlowersComponent implements OnInit {
+export class FlowersComponent {
     flowers: Flower[] = [];
     strains: Strain[] = [];
     grows: Grow[] = [];
@@ -21,24 +21,9 @@ export class FlowersComponent implements OnInit {
         private strainsService: StrainsService,
         private growsService: GrowsService,
         public flowerDialog: MatDialog) {
-    }
-
-    ngOnInit() {
-        this.getFlowers();
-        this.getStrains();
-        this.getGrows();
-    }
-
-    getFlowers() {
-        this.flowersService.getFlowers().subscribe(data => this.flowers = data);
-    }
-
-    getStrains() {
-        this.strainsService.getStrains().subscribe(data => this.strains = data);
-    }
-
-    getGrows() {
-        this.growsService.getGrows().subscribe(data => this.grows = data);
+        this.flowersService.flowers.subscribe(data => this.flowers = data);
+        this.strainsService.strains.subscribe(data => this.strains = data);
+        this.growsService.grows.subscribe(data => this.grows = data);
     }
 
     addFlower() {

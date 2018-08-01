@@ -14,15 +14,15 @@ export class NutesService {
         );
     }
 
-    getNutes(): Observable<any> {
+    get nutes(): Observable<Nute[]> {
         return this.nutes$;
     }
 
-    createNute(nute): Observable<any> {
+    createNute(nute): Observable<Nute> {
         return this.http.post<Nute>(Config.api + Config.endpoints.nutes, nute);
     }
 
-    deleteNute(nute): Observable<any> {
+    deleteNute(nute): Observable<Nute> {
         return this.http.delete<Nute>(Config.api + Config.endpoints.nutes + `/${nute._id}`);
     }
 

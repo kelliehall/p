@@ -1,18 +1,24 @@
-<div id="dashboard">
-    <div id="flowers" class="col-sm-8">
+<div class="dashboard col-sm-6">
+    <div>
         <h3>Flowers</h3>
         <ul class="list-group">
-            <li class="list-group-item col-sm-4" *ngFor="let flower of flowers" [routerLink]="['/flowers', flower._id]">
-                <span class="col-sm-12">{{flower.identifier}} - ({{findStrain(flower.strain)}})</span>
-                <span class="col-sm-12">{{findGrow(flower.grow)}} - {{flower.planted | findage}} days</span>
+            <li class="list-group-item" *ngFor="let flower of flowers" [routerLink]="['/flowers', flower._id]">
+                <p class="flower-id">{{flower.identifier}} - ({{findStrain(flower.strain)}})</p>
+                <p class="grow-info">Grow: {{findGrow(flower.grow)}} - {{flower.planted | findage}} days</p>
                 <i class="fa fa-chevron-right pull-right"></i>
             </li>
         </ul>
     </div>
-    <div id="grows" class="col-sm-4">
+    <div>
         <h3>Grows</h3>
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let grow of grows" [routerLink]="['/grows', grow._id]">
+                <p>{{grow.name}}</p>
+                <i class="fa fa-chevron-right pull-right"></i>
+            </li>
+        </ul>
     </div>
-    <div id="nutrients" class="col-sm-4">
+    <div>
         <h3>Nutrients</h3>
     </div>
 </div>

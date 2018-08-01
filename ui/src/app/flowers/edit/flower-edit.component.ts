@@ -29,6 +29,9 @@ export class FlowerEditComponent implements OnInit {
         private nutesService: NutesService,
         public notesDialog: MatDialog,
         private flowersService: FlowerService) {
+        this.strainsService.strains.subscribe(data => this.strains = data);
+        this.growsService.grows.subscribe(data => this.grows = data);
+        this.nutesService.nutes.subscribe(data => this.nutes = data);
     }
 
     ngOnInit() {
@@ -38,21 +41,6 @@ export class FlowerEditComponent implements OnInit {
             }))
             .subscribe(flower => this.flower$ = flower);
 
-        this.getStrains();
-        this.getGrows();
-        this.getNutes();
-    }
-
-    getStrains() {
-        this.strainsService.getStrains().subscribe(data => this.strains = data);
-    }
-
-    getGrows() {
-        this.growsService.getGrows().subscribe(data => this.grows = data);
-    }
-
-    getNutes() {
-        this.nutesService.getNutes().subscribe(data => this.nutes = data);
     }
 
     findStrain(id) {

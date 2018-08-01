@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Strain } from './strains';
 import { StrainsService } from './strains.service';
 import { StrainDialog } from './modal';
@@ -8,18 +8,12 @@ import { MatDialog } from '@angular/material';
     templateUrl: './strains.component.html',
     styleUrls: ['./strains.scss']
 })
-export class StrainsComponent implements OnInit {
+export class StrainsComponent {
     strains: Strain[];
 
     constructor(private strainsService: StrainsService,
-        public strainDialog: MatDialog) { }
-
-    ngOnInit() {
-        this.getStrains();
-    }
-
-    getStrains() {
-        this.strainsService.getStrains().subscribe(data => this.strains = data);
+        public strainDialog: MatDialog) {
+        this.strainsService.strains.subscribe(data => this.strains = data);
     }
 
     addStrain() {

@@ -14,7 +14,7 @@ export class FlowerService {
         );
     }
 
-    getFlowers(): Observable<any> {
+    get flowers(): Observable<any> {
         return this.flowers$;
     }
 

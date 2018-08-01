@@ -1,4 +1,4 @@
-<div id="flower-details" *ngIf="flower$">
+<div class="flower-details" *ngIf="flower$">
     <div class="details">
         <h1>
             {{flower$.identifier}}
@@ -6,8 +6,8 @@
         <span>{{findGrow(flower$.grow)}} - {{findStrain(flower$.strain)}}</span>
     </div>
     <history [flower]="flower$"></history>
-    <button mat-raised-button color="accent" (click)="harvestedFlower()" id="flower-harvested" *ngIf="!flower$.harvested">Harvest</button>
-    <button mat-raised-button color="accent" (click)="addNote()" class="row" id="notes-add">
+    <button mat-raised-button color="accent" (click)="harvestedFlower()" class="flower-harvested" *ngIf="!flower$.harvested">Harvest</button>
+    <button mat-raised-button color="accent" (click)="addNote()" class="row" class="notes-add">
         Add Note
     </button>
 </div>

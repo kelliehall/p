@@ -1,4 +1,4 @@
-#grow-container {
+.grow-container {
     margin-top: 1vh;
     .card {
       display: flex;
@@ -13,13 +13,13 @@
     .fa-times {
       cursor: pointer;
     }
-    #grow-add{
+    .grow-add{
       position: fixed;
       bottom: 1vh;
       right: 3vh;
     }
   }
-  #grow-modal {
+  .grow-modal {
     .row {
       width: 100%;
     }

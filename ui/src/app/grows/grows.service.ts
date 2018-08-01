@@ -14,7 +14,7 @@ export class GrowsService {
         );
     }
 
-    getGrows(): Observable<any> {
+    get grows(): Observable<any> {
         return this.grows$;
     }
 
