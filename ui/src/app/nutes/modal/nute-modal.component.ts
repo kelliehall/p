@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 import { NutesService } from '../nutes.service';
-import { NutesComponent } from '../nutes.component';
 import { MatDialog } from '@angular/material';
 
 @Component({
