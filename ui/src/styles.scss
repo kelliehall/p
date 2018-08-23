@@ -6,14 +6,13 @@
 
 
 body {
-    background: $slate;
-    font-family: 'RobotoDraft', 'Roboto', sans-serif;
-    .jumbotron {
-        background: $slate;
-    }
+    background: $bg;
+    color: $text;
+    font-family: 'Roboto Condensed', sans-serif;
     .card {
-        background: $slate;
-        color: $seafoam;
+        background: $panel;
+        color: $green;
+        border-radius: 0%;
         margin: 1em;
         cursor: pointer;
     }

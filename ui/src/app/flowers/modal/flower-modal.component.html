@@ -39,19 +39,13 @@
             <input matInput placeholder="Yield" formControlName="yield">
         </mat-form-field>
 
-        <mat-slide-toggle [color]="'primary'" formControlName="mother" class="row">
-            Mother
-        </mat-slide-toggle>
         <!-- todo replace with multiselect of clones -->
-        <mat-form-field class="row" *ngIf="flowerForm.get('mother').value">
+        <mat-form-field class="row">
             <input matInput placeholder="Children" formControlName="children">
         </mat-form-field>
 
-        <mat-slide-toggle [color]="'primary'" formControlName="clone" class="row">
-            Clone
-        </mat-slide-toggle>
-        <mat-form-field class="row" *ngIf="flowerForm.get('clone').value">
-            <input matInput [matDatepicker]="picker" placeholder="Clone Date" formControlName="cloneStart">
+        <mat-form-field class="row">
+            <input matInput [matDatepicker]="picker" placeholder="Date Cloned" formControlName="cloned">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>

@@ -1,10 +1,20 @@
+@import '../../variables.scss';
+
 .dashboard {
     .list-group {
         margin-left: 10px;
         margin-bottom: 15px;
+        flex-direction: row;
+        flex-wrap: wrap;
         cursor: pointer;
         .list-group-item {
             background-color: rgba(0, 0, 0, .1);
+            border-radius: 0%;
+            border: 1px solid $darkblue;
+            width: 48%;
+            margin-right: 5px;
+            margin-bottom: 2px;
+            height: 90px;
             .fa-chevron-right {
                 position: absolute;
                 right: 10px;

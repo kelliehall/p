@@ -25,19 +25,16 @@ export class FlowerDialog implements OnInit {
 
     ngOnInit() {
         this.flowerForm = this.fb.group({
-            strain: new FormControl('', Validators.required),
             identifier: new FormControl('', Validators.required),
+            strain: new FormControl('', Validators.required),
+            grow: new FormControl(''),
 
             planted: new FormControl(moment(), Validators.required),
             harvested: new FormControl(''),
             yield: new FormControl(''),
 
-            grow: new FormControl(''),
-
-            mother: new FormControl(false),
             children: new FormControl(),
-            clone: new FormControl(false),
-            cloneStart: new FormControl(),
+            cloned: new FormControl(),
 
             notes: new FormArray([]),
         });

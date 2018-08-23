@@ -18,7 +18,6 @@ var FlowerSchema = new Schema({
 
     children: [{ type: String }],
     cloned: String,
-    flowered: String,
 
     history: [{
         note: { type: String },
@@ -28,6 +27,7 @@ var FlowerSchema = new Schema({
             name: String,
             amount: String,
         }],
+        flowered: String, //move to outer ??
         transplanted: Boolean,
         defeciencys: Boolean,
         flushed: Boolean,

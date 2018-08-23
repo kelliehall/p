@@ -35,17 +35,20 @@ export class NotesDialog implements OnInit {
         this.notesForm = this.fb.group({
             note: new FormControl(''),
             date: new FormControl(moment(), Validators.required),
+            height: new FormControl(null),
             nutrients: new FormArray([]),
+            flowered: new FormControl(false),
             transplanted: new FormControl(false),
             defeciencys: new FormControl(''),
-            flowered: new FormControl(false),
             flushed: new FormControl(false),
             watered: new FormControl(false),
             phIn: new FormControl(null),
             phOut: new FormControl(null),
             ppmIn: new FormControl(null),
             ppmOut: new FormControl(null),
-            height: new FormControl(null)
+            rate: new FormControl(),
+            timing: new FormControl(),
+            amount: new FormControl()
         });
     }
 
