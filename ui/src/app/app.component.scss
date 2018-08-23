@@ -1,15 +1,15 @@
 @import '../variables.scss';
 
 .nav {
-    background: $artichoke;
+    background: $slate;
     border-radius: 1%;
     .nav-link {
-        color: $jet;
+        color: $br;
         &:hover {
-            color: $rocker;
+            color: $rust;
         }
         &.active {
-            color: $ash;
+            color: $rust;
         }
     }
 }

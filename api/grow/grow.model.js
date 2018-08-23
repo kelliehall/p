@@ -5,17 +5,18 @@ var Schema = mongoose.Schema;
 
 var GrowSchema = new Schema({
     name: { type: String, required: true },
-    flowers: [String],
-    cycle: String,
+    //veg or flower
+    status: { type: String },
     start: { type: String, required: true },
+    
+    cycle: String,
     harvested: String,
-    nutrients: [String],
+
+    flowers: [String],
     notes: [{
         date: String,
         observation: String
-    }],
-    //veg or flower
-    status: { type: String }
+    }]
 });
 
 const Grow = mongoose.model('grow', GrowSchema);

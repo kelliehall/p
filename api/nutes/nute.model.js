@@ -4,20 +4,18 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var NuteSchema = new Schema({
-    name: { type: String, required: true },
     active: { type: Boolean, required: true },
-    need: { type: Boolean, required: true },
-    htg: {
-        size: String,
-        link: { type: String, trim: true }
-    },
-    amzn: {
-        size: String,
-        link: { type: String, trim: true }
-    },
-    tracking: { type: String, trim: true },
+
+    name: { type: String, required: true },
     added: { type: String, required: true },
-    image: String
+    need: { type: Boolean, required: true },
+    image: String,
+
+    tracking: { type: String, trim: true },
+    links: [{
+        site: String,
+        link: String
+    }]
 });
 
 const Nute = mongoose.model('nute', NuteSchema);

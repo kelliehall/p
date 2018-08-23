@@ -6,14 +6,12 @@ var Schema = mongoose.Schema;
 var StrainSchema = new Schema({
     active: Boolean,
     name: { type: String, required: true },
-    breeder: { type: String, required: true },
-    genetics: { type: String },
-    source: { type: String },
-    notes: [{
-        date: { type: String, required: true },
-        note: String,
-        grow: String,
-    }]
+    breeder: { type: String },
+    genetics: {
+        mother: { type: String },
+        father: { type: String }
+    },
+    source: { type: String }
 });
 
 const Strain = mongoose.model('strain', StrainSchema);

@@ -28,7 +28,7 @@ export class DashboardComponent implements OnDestroy {
         this.info$ = this.flowersService.flowers.subscribe(data => this.flowers = data);
         this.info$.add(this.strainsService.strains.subscribe(data => this.strains = data));
         this.info$.add(this.growsService.grows.subscribe(data => this.grows = data));
-        this.info$.add(this.nutesService.nutes.subscribe(data => this.nutes = data));
+        this.info$.add(this.nutesService.nutes.subscribe(data => this.nutes = data.filter(n => n.need)));
     }
 
     ngOnDestroy() {

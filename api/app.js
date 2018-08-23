@@ -8,7 +8,6 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 
 const Nutes = require('./nutes/nutes');
-const Cycles = require('./cycle/cycles');
 const Grows = require('./grow/grows');
 const Flowers = require('./flower/flowers');
 const Strains = require('./strains/strains');
@@ -42,17 +41,6 @@ app.get('/nute/:id', (req, res) => {
     new Nutes({ req }).getAll().then(result => res.json(result));
 }).delete('/nute/:id', (req, res) => {
     new Nutes({ req }).deleteNute().then(result => res.json(result));
-});
-
-//Cycles
-app.get('/cycle/:id', (req, res) => {
-    new Cycles({ req }).getById().then(result => res.json(result));
-}).post('/cycle', (req, res) => {
-    new Cycles({ req }).create().then(result => res.json(result));
-}).get('/cycle', (req, res) => {
-    new Cycles({ req }).getAll().then(result => res.json(result));
-}).delete('/cycle/:id', (req, res) => {
-    new Cycles({ req }).deleteCycle().then(result => res.json(result));
 });
 
 //Grows
